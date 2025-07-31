@@ -18,48 +18,23 @@ class Config:
     seed = 312  # 312 42 3407 0 10086 114514+-5 3112
 
     gpu = 1
-    model_type = 'spike-temporal-former'
-    block_type = 'sequeezeformer'  # 'sequeezeformer'
+    model_type = 'spikcommander'
+    block_type = 'mstasa'
+
 
     distribute = False
 
     spike_mode = "lif"
 
     # Spectrogram
-    # Number of Frames= 1+ (Total Length of the Audio - Window Size) / Hop_Length
-    # Learning delays: hop_length=80; n_mels=140
-    window_size = 256 # 256
-    # 40+70, 80+140或许是两个组合
-    hop_length = 80  # 16=> 500 time steps, 20=>400 time steps, 25=>320 time steps,  40=> 200 time steps, 80 => 100 time steps, 200 => 40 time steps
-    # hop_length_list = [800,400,200,160,40,32]  # 16=> 500 time steps, 20=>400 time steps, 25=>320 time steps,  40=> 200 time steps, 80 => 100 time steps, 200 => 40 time steps
-    hop_length_list = [32]  # 16=> 500 time steps, 20=>400 time steps, 25=>320 time steps,  40=> 200 time steps, 80 => 100 time steps, 200 => 40 time steps
-    # hop_length_list = [80]  # 16=> 500 time steps, 20=>400 time steps, 25=>320 time steps,  40=> 200 time steps, 80 => 100 time steps, 200 => 40 time steps
-    n_mels = 140 # 140 => 70
+    window_size = 256
+    hop_length = 80
+    n_mels = 140
 
-    attention_window = 20 # 4,8,12,24,32 ,跑的顺序，24=》12=》8=》4=》32
-    attention_window_list = [8]
-    # attention_window_list = [16, 24]
-    # attention_window_list = [28, 32]
-
+    attention_window = 20
 
     depths = 2
-    epochs = 300 if spike_mode == "plif" else 300
-    # batch_size = 128 if hop_length==20 else 256# 256 => 512
-    # if hop_length == 8 and depths == 1:
-    #     batch_size = 72
-    # elif hop_length == 16 and depths == 1:
-    #     batch_size = 208
-    # elif hop_length == 16 and depths == 2:
-    #     batch_size = 126
-    # elif hop_length == 20 and depths == 1:
-    #     batch_size = 256
-    # elif hop_length == 20 and depths == 2:
-    #     batch_size = 128
-    # else:
-    # batch_size = 248
-
     batch_size = 256
-    # batch_size = 256
 
     # dropout_l control the first layer
     dropout_l = 0.1
@@ -73,27 +48,11 @@ class Config:
     ############################
     #        USE Module        #
     ############################
-    # 控制不同模块间是否使用BN
     use_norm = False
-    # 控制每个模块的第一个输入是否过一个LN
-    use_ln = False
-    # 控制每个block最后一个输入是否是一个scale
-    use_adaptive_scale = True
-    # 控制首尾是否加入残差
-    use_identity = False
-    # 控制每个module之间是否使用LIF
-    use_lif = False
-    # GSU中是否要使用BN
     use_bn = True
-    # 是否使用SepcAug数据增强
     use_aug = True
-    # 是否使用dropout
     use_dp = True
-    # 是否使用DW的biass
     use_dw_bias = False
-
-    use_global = True
-    use_local = False
 
     ############################
     #          Augment         #
@@ -104,13 +63,6 @@ class Config:
     F = 10
     mT = 1
     pS = 0.25
-
-    # SpecAugmenter
-    n_time_masks = 2
-    time_mask_width =  25
-    n_freq_masks =  2
-    freq_mask_width =  7
-
 
     backend = 'cupy'
     attn_mode = 'v2'
@@ -126,12 +78,8 @@ class Config:
 
     n_inputs = n_mels
     n_hidden_neurons_list = [256] # [128, 144, 160, 176, 192, 208, 224, 240, 256]
-    n_hidden_neurons = 144
     n_outputs = 20 if dataset == 'shd' else 35
-    hidden_dims = mlp_ratio*n_hidden_neurons # 可以试一下768
-
     num_heads = 16  # 4=> 8=> 16 不增添加网络参数
-    # spike_mode_list = ['lif', 'plif']
 
     loss = 'sum'           # 'mean', 'max', 'spike_count', 'sum'
     loss_fn = 'CEloss' # 'SmoothCEloss', 'CEloss'
@@ -142,8 +90,7 @@ class Config:
     gate_v_threshold = 1.0 # LIF
     alpha = 5.0
 
-    # surrogate_function = surrogate.Sigmoid(alpha=alpha)
-    surrogate_function = surrogate.ATan(alpha=alpha)  # FastSigmoid(alpha)
+    surrogate_function = surrogate.ATan(alpha=alpha)
     detach_reset = True
 
 

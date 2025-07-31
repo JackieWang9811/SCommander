@@ -1,0 +1,925 @@
+Fri 18 Jul 2025 09:44:49 INFO Logger is properly initialized and ready to use.
+Fri 18 Jul 2025 09:44:49 INFO The GPU is 3
+Fri 18 Jul 2025 09:44:49 INFO ##############################################
+
+Fri 18 Jul 2025 09:44:49 INFO Seed :312
+Fri 18 Jul 2025 09:44:49 INFO The epoch is: 300
+Fri 18 Jul 2025 09:44:49 INFO The batch size is : 256
+Fri 18 Jul 2025 09:44:49 INFO The backend is: cupy
+Fri 18 Jul 2025 09:44:49 INFO The num_heads is: 16
+Fri 18 Jul 2025 09:44:49 INFO The attn_window_size is: 20
+Fri 18 Jul 2025 09:44:50 INFO The mF is: 1
+Fri 18 Jul 2025 09:44:50 INFO The F is: 10
+Fri 18 Jul 2025 09:44:50 INFO The mT is: 1
+Fri 18 Jul 2025 09:44:50 INFO The pS is: 0.25
+Fri 18 Jul 2025 09:44:50 INFO The window_size is 256
+Fri 18 Jul 2025 09:44:50 INFO The hop_length is 80
+Fri 18 Jul 2025 09:44:50 INFO The n_mels is 140
+Fri 18 Jul 2025 09:44:50 INFO The hidden_dim is: 256
+Fri 18 Jul 2025 09:44:50 INFO The spike_mode is: lif
+Fri 18 Jul 2025 09:44:50 INFO The block_mode is :sequeezeformer
+Fri 18 Jul 2025 09:44:50 INFO The gate_v_threshold is: 1.0
+Fri 18 Jul 2025 09:44:50 INFO Model size:1120688
+Fri 18 Jul 2025 09:44:50 INFO lr_w: 0.002
+Fri 18 Jul 2025 09:44:50 INFO weight_decay: 0.005
+Fri 18 Jul 2025 09:44:50 INFO T:40
+Fri 18 Jul 2025 09:46:01 INFO =====> Epoch 0 : Loss Train = 4.565  |  Acc Train = 13.07%
+Fri 18 Jul 2025 09:46:01 INFO Loss Valid = 2.369  |  Acc Valid = 40.80%  |  Best Acc Valid = 40.80%
+Fri 18 Jul 2025 09:46:01 INFO Loss Test = 2.397  |  Acc Test = 40.83%  |  Best Acc Test = 40.83%
+Fri 18 Jul 2025 09:47:06 INFO =====> Epoch 1 : Loss Train = 2.135  |  Acc Train = 45.09%
+Fri 18 Jul 2025 09:47:06 INFO Loss Valid = 0.930  |  Acc Valid = 75.15%  |  Best Acc Valid = 75.15%
+Fri 18 Jul 2025 09:47:06 INFO Loss Test = 0.997  |  Acc Test = 72.88%  |  Best Acc Test = 72.88%
+Fri 18 Jul 2025 09:48:11 INFO =====> Epoch 2 : Loss Train = 1.432  |  Acc Train = 61.69%
+Fri 18 Jul 2025 09:48:11 INFO Loss Valid = 0.759  |  Acc Valid = 79.79%  |  Best Acc Valid = 79.79%
+Fri 18 Jul 2025 09:48:11 INFO Loss Test = 0.794  |  Acc Test = 78.23%  |  Best Acc Test = 78.23%
+Fri 18 Jul 2025 09:49:18 INFO =====> Epoch 3 : Loss Train = 1.159  |  Acc Train = 68.54%
+Fri 18 Jul 2025 09:49:18 INFO Loss Valid = 0.474  |  Acc Valid = 87.08%  |  Best Acc Valid = 87.08%
+Fri 18 Jul 2025 09:49:18 INFO Loss Test = 0.526  |  Acc Test = 85.51%  |  Best Acc Test = 85.51%
+Fri 18 Jul 2025 09:50:22 INFO =====> Epoch 4 : Loss Train = 0.999  |  Acc Train = 72.33%
+Fri 18 Jul 2025 09:50:22 INFO Loss Valid = 0.464  |  Acc Valid = 87.58%  |  Best Acc Valid = 87.58%
+Fri 18 Jul 2025 09:50:22 INFO Loss Test = 0.512  |  Acc Test = 85.94%  |  Best Acc Test = 85.94%
+Fri 18 Jul 2025 09:51:26 INFO =====> Epoch 5 : Loss Train = 0.900  |  Acc Train = 75.13%
+Fri 18 Jul 2025 09:51:26 INFO Loss Valid = 0.421  |  Acc Valid = 88.48%  |  Best Acc Valid = 88.48%
+Fri 18 Jul 2025 09:51:26 INFO Loss Test = 0.476  |  Acc Test = 87.46%  |  Best Acc Test = 87.46%
+Fri 18 Jul 2025 09:52:31 INFO =====> Epoch 6 : Loss Train = 0.807  |  Acc Train = 77.66%
+Fri 18 Jul 2025 09:52:31 INFO Loss Valid = 0.355  |  Acc Valid = 89.87%  |  Best Acc Valid = 89.87%
+Fri 18 Jul 2025 09:52:31 INFO Loss Test = 0.372  |  Acc Test = 89.67%  |  Best Acc Test = 89.67%
+Fri 18 Jul 2025 09:53:37 INFO =====> Epoch 7 : Loss Train = 0.756  |  Acc Train = 78.89%
+Fri 18 Jul 2025 09:53:37 INFO Loss Valid = 0.326  |  Acc Valid = 91.02%  |  Best Acc Valid = 91.02%
+Fri 18 Jul 2025 09:53:37 INFO Loss Test = 0.356  |  Acc Test = 90.24%  |  Best Acc Test = 90.24%
+Fri 18 Jul 2025 09:54:42 INFO =====> Epoch 8 : Loss Train = 0.709  |  Acc Train = 80.22%
+Fri 18 Jul 2025 09:54:42 INFO Loss Valid = 0.370  |  Acc Valid = 89.50%  |  Best Acc Valid = 91.02%
+Fri 18 Jul 2025 09:54:42 INFO Loss Test = 0.428  |  Acc Test = 88.40%  |  Best Acc Test = 90.24%
+Fri 18 Jul 2025 09:55:48 INFO =====> Epoch 9 : Loss Train = 0.674  |  Acc Train = 81.00%
+Fri 18 Jul 2025 09:55:48 INFO Loss Valid = 0.335  |  Acc Valid = 91.36%  |  Best Acc Valid = 91.36%
+Fri 18 Jul 2025 09:55:48 INFO Loss Test = 0.357  |  Acc Test = 90.50%  |  Best Acc Test = 90.50%
+Fri 18 Jul 2025 09:56:52 INFO =====> Epoch 10 : Loss Train = 0.638  |  Acc Train = 82.04%
+Fri 18 Jul 2025 09:56:52 INFO Loss Valid = 0.284  |  Acc Valid = 92.17%  |  Best Acc Valid = 92.17%
+Fri 18 Jul 2025 09:56:52 INFO Loss Test = 0.340  |  Acc Test = 90.82%  |  Best Acc Test = 90.82%
+Fri 18 Jul 2025 09:57:57 INFO =====> Epoch 11 : Loss Train = 0.617  |  Acc Train = 82.60%
+Fri 18 Jul 2025 09:57:57 INFO Loss Valid = 0.270  |  Acc Valid = 92.64%  |  Best Acc Valid = 92.64%
+Fri 18 Jul 2025 09:57:57 INFO Loss Test = 0.295  |  Acc Test = 91.92%  |  Best Acc Test = 91.92%
+Fri 18 Jul 2025 09:59:01 INFO =====> Epoch 12 : Loss Train = 0.578  |  Acc Train = 83.79%
+Fri 18 Jul 2025 09:59:01 INFO Loss Valid = 0.249  |  Acc Valid = 93.13%  |  Best Acc Valid = 93.13%
+Fri 18 Jul 2025 09:59:01 INFO Loss Test = 0.279  |  Acc Test = 92.22%  |  Best Acc Test = 92.22%
+Fri 18 Jul 2025 10:00:05 INFO =====> Epoch 13 : Loss Train = 0.564  |  Acc Train = 84.07%
+Fri 18 Jul 2025 10:00:05 INFO Loss Valid = 0.231  |  Acc Valid = 93.52%  |  Best Acc Valid = 93.52%
+Fri 18 Jul 2025 10:00:05 INFO Loss Test = 0.267  |  Acc Test = 92.56%  |  Best Acc Test = 92.56%
+Fri 18 Jul 2025 10:01:11 INFO =====> Epoch 14 : Loss Train = 0.535  |  Acc Train = 84.74%
+Fri 18 Jul 2025 10:01:11 INFO Loss Valid = 0.227  |  Acc Valid = 93.77%  |  Best Acc Valid = 93.77%
+Fri 18 Jul 2025 10:01:11 INFO Loss Test = 0.253  |  Acc Test = 92.98%  |  Best Acc Test = 92.98%
+Fri 18 Jul 2025 10:02:15 INFO =====> Epoch 15 : Loss Train = 0.529  |  Acc Train = 84.77%
+Fri 18 Jul 2025 10:02:15 INFO Loss Valid = 0.228  |  Acc Valid = 93.51%  |  Best Acc Valid = 93.77%
+Fri 18 Jul 2025 10:02:15 INFO Loss Test = 0.249  |  Acc Test = 92.99%  |  Best Acc Test = 92.99%
+Fri 18 Jul 2025 10:03:18 INFO =====> Epoch 16 : Loss Train = 0.499  |  Acc Train = 85.65%
+Fri 18 Jul 2025 10:03:18 INFO Loss Valid = 0.199  |  Acc Valid = 94.51%  |  Best Acc Valid = 94.51%
+Fri 18 Jul 2025 10:03:18 INFO Loss Test = 0.216  |  Acc Test = 93.72%  |  Best Acc Test = 93.72%
+Fri 18 Jul 2025 10:04:23 INFO =====> Epoch 17 : Loss Train = 0.493  |  Acc Train = 85.87%
+Fri 18 Jul 2025 10:04:23 INFO Loss Valid = 0.194  |  Acc Valid = 94.54%  |  Best Acc Valid = 94.54%
+Fri 18 Jul 2025 10:04:23 INFO Loss Test = 0.225  |  Acc Test = 93.75%  |  Best Acc Test = 93.75%
+Fri 18 Jul 2025 10:05:27 INFO =====> Epoch 18 : Loss Train = 0.473  |  Acc Train = 86.39%
+Fri 18 Jul 2025 10:05:27 INFO Loss Valid = 0.202  |  Acc Valid = 94.39%  |  Best Acc Valid = 94.54%
+Fri 18 Jul 2025 10:05:27 INFO Loss Test = 0.214  |  Acc Test = 93.98%  |  Best Acc Test = 93.98%
+Fri 18 Jul 2025 10:06:32 INFO =====> Epoch 19 : Loss Train = 0.452  |  Acc Train = 86.95%
+Fri 18 Jul 2025 10:06:32 INFO Loss Valid = 0.189  |  Acc Valid = 94.62%  |  Best Acc Valid = 94.62%
+Fri 18 Jul 2025 10:06:32 INFO Loss Test = 0.213  |  Acc Test = 94.05%  |  Best Acc Test = 94.05%
+Fri 18 Jul 2025 10:07:36 INFO =====> Epoch 20 : Loss Train = 0.438  |  Acc Train = 87.33%
+Fri 18 Jul 2025 10:07:36 INFO Loss Valid = 0.187  |  Acc Valid = 94.86%  |  Best Acc Valid = 94.86%
+Fri 18 Jul 2025 10:07:36 INFO Loss Test = 0.198  |  Acc Test = 94.40%  |  Best Acc Test = 94.40%
+Fri 18 Jul 2025 10:08:40 INFO =====> Epoch 21 : Loss Train = 0.419  |  Acc Train = 87.82%
+Fri 18 Jul 2025 10:08:40 INFO Loss Valid = 0.179  |  Acc Valid = 94.94%  |  Best Acc Valid = 94.94%
+Fri 18 Jul 2025 10:08:40 INFO Loss Test = 0.192  |  Acc Test = 94.66%  |  Best Acc Test = 94.66%
+Fri 18 Jul 2025 10:09:46 INFO =====> Epoch 22 : Loss Train = 0.411  |  Acc Train = 88.18%
+Fri 18 Jul 2025 10:09:46 INFO Loss Valid = 0.171  |  Acc Valid = 95.21%  |  Best Acc Valid = 95.21%
+Fri 18 Jul 2025 10:09:46 INFO Loss Test = 0.198  |  Acc Test = 94.46%  |  Best Acc Test = 94.66%
+Fri 18 Jul 2025 10:10:50 INFO =====> Epoch 23 : Loss Train = 0.400  |  Acc Train = 88.37%
+Fri 18 Jul 2025 10:10:50 INFO Loss Valid = 0.189  |  Acc Valid = 94.82%  |  Best Acc Valid = 95.21%
+Fri 18 Jul 2025 10:10:50 INFO Loss Test = 0.194  |  Acc Test = 94.57%  |  Best Acc Test = 94.66%
+Fri 18 Jul 2025 10:11:55 INFO =====> Epoch 24 : Loss Train = 0.389  |  Acc Train = 88.66%
+Fri 18 Jul 2025 10:11:55 INFO Loss Valid = 0.173  |  Acc Valid = 95.29%  |  Best Acc Valid = 95.29%
+Fri 18 Jul 2025 10:11:55 INFO Loss Test = 0.188  |  Acc Test = 94.76%  |  Best Acc Test = 94.76%
+Fri 18 Jul 2025 10:13:00 INFO =====> Epoch 25 : Loss Train = 0.375  |  Acc Train = 89.08%
+Fri 18 Jul 2025 10:13:00 INFO Loss Valid = 0.167  |  Acc Valid = 95.29%  |  Best Acc Valid = 95.29%
+Fri 18 Jul 2025 10:13:00 INFO Loss Test = 0.178  |  Acc Test = 95.10%  |  Best Acc Test = 95.10%
+Fri 18 Jul 2025 10:14:05 INFO =====> Epoch 26 : Loss Train = 0.371  |  Acc Train = 89.24%
+Fri 18 Jul 2025 10:14:05 INFO Loss Valid = 0.163  |  Acc Valid = 95.44%  |  Best Acc Valid = 95.44%
+Fri 18 Jul 2025 10:14:05 INFO Loss Test = 0.177  |  Acc Test = 95.17%  |  Best Acc Test = 95.17%
+Fri 18 Jul 2025 10:15:11 INFO =====> Epoch 27 : Loss Train = 0.360  |  Acc Train = 89.44%
+Fri 18 Jul 2025 10:15:11 INFO Loss Valid = 0.160  |  Acc Valid = 95.52%  |  Best Acc Valid = 95.52%
+Fri 18 Jul 2025 10:15:11 INFO Loss Test = 0.169  |  Acc Test = 95.23%  |  Best Acc Test = 95.23%
+Fri 18 Jul 2025 10:16:16 INFO =====> Epoch 28 : Loss Train = 0.344  |  Acc Train = 89.82%
+Fri 18 Jul 2025 10:16:16 INFO Loss Valid = 0.161  |  Acc Valid = 95.43%  |  Best Acc Valid = 95.52%
+Fri 18 Jul 2025 10:16:16 INFO Loss Test = 0.175  |  Acc Test = 95.16%  |  Best Acc Test = 95.23%
+Fri 18 Jul 2025 10:17:22 INFO =====> Epoch 29 : Loss Train = 0.334  |  Acc Train = 90.15%
+Fri 18 Jul 2025 10:17:22 INFO Loss Valid = 0.152  |  Acc Valid = 95.64%  |  Best Acc Valid = 95.64%
+Fri 18 Jul 2025 10:17:22 INFO Loss Test = 0.172  |  Acc Test = 95.11%  |  Best Acc Test = 95.23%
+Fri 18 Jul 2025 10:18:29 INFO =====> Epoch 30 : Loss Train = 0.324  |  Acc Train = 90.49%
+Fri 18 Jul 2025 10:18:29 INFO Loss Valid = 0.157  |  Acc Valid = 95.59%  |  Best Acc Valid = 95.64%
+Fri 18 Jul 2025 10:18:29 INFO Loss Test = 0.172  |  Acc Test = 95.05%  |  Best Acc Test = 95.23%
+Fri 18 Jul 2025 10:19:34 INFO =====> Epoch 31 : Loss Train = 0.323  |  Acc Train = 90.53%
+Fri 18 Jul 2025 10:19:34 INFO Loss Valid = 0.149  |  Acc Valid = 95.89%  |  Best Acc Valid = 95.89%
+Fri 18 Jul 2025 10:19:34 INFO Loss Test = 0.163  |  Acc Test = 95.52%  |  Best Acc Test = 95.52%
+Fri 18 Jul 2025 10:20:38 INFO =====> Epoch 32 : Loss Train = 0.321  |  Acc Train = 90.57%
+Fri 18 Jul 2025 10:20:38 INFO Loss Valid = 0.149  |  Acc Valid = 95.80%  |  Best Acc Valid = 95.89%
+Fri 18 Jul 2025 10:20:38 INFO Loss Test = 0.157  |  Acc Test = 95.62%  |  Best Acc Test = 95.62%
+Fri 18 Jul 2025 10:21:43 INFO =====> Epoch 33 : Loss Train = 0.315  |  Acc Train = 90.83%
+Fri 18 Jul 2025 10:21:43 INFO Loss Valid = 0.150  |  Acc Valid = 95.79%  |  Best Acc Valid = 95.89%
+Fri 18 Jul 2025 10:21:43 INFO Loss Test = 0.164  |  Acc Test = 95.36%  |  Best Acc Test = 95.62%
+Fri 18 Jul 2025 10:22:49 INFO =====> Epoch 34 : Loss Train = 0.302  |  Acc Train = 91.05%
+Fri 18 Jul 2025 10:22:49 INFO Loss Valid = 0.146  |  Acc Valid = 96.02%  |  Best Acc Valid = 96.02%
+Fri 18 Jul 2025 10:22:49 INFO Loss Test = 0.153  |  Acc Test = 95.68%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:23:54 INFO =====> Epoch 35 : Loss Train = 0.300  |  Acc Train = 91.14%
+Fri 18 Jul 2025 10:23:54 INFO Loss Valid = 0.144  |  Acc Valid = 95.98%  |  Best Acc Valid = 96.02%
+Fri 18 Jul 2025 10:23:54 INFO Loss Test = 0.157  |  Acc Test = 95.59%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:24:59 INFO =====> Epoch 36 : Loss Train = 0.298  |  Acc Train = 91.25%
+Fri 18 Jul 2025 10:24:59 INFO Loss Valid = 0.142  |  Acc Valid = 96.04%  |  Best Acc Valid = 96.04%
+Fri 18 Jul 2025 10:24:59 INFO Loss Test = 0.155  |  Acc Test = 95.59%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:26:03 INFO =====> Epoch 37 : Loss Train = 0.294  |  Acc Train = 91.31%
+Fri 18 Jul 2025 10:26:03 INFO Loss Valid = 0.144  |  Acc Valid = 95.88%  |  Best Acc Valid = 96.04%
+Fri 18 Jul 2025 10:26:03 INFO Loss Test = 0.154  |  Acc Test = 95.61%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:27:08 INFO =====> Epoch 38 : Loss Train = 0.298  |  Acc Train = 91.25%
+Fri 18 Jul 2025 10:27:08 INFO Loss Valid = 0.145  |  Acc Valid = 95.93%  |  Best Acc Valid = 96.04%
+Fri 18 Jul 2025 10:27:08 INFO Loss Test = 0.153  |  Acc Test = 95.59%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:28:13 INFO =====> Epoch 39 : Loss Train = 0.296  |  Acc Train = 91.29%
+Fri 18 Jul 2025 10:28:13 INFO Loss Valid = 0.140  |  Acc Valid = 96.09%  |  Best Acc Valid = 96.09%
+Fri 18 Jul 2025 10:28:13 INFO Loss Test = 0.153  |  Acc Test = 95.58%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:29:18 INFO =====> Epoch 40 : Loss Train = 0.301  |  Acc Train = 91.10%
+Fri 18 Jul 2025 10:29:18 INFO Loss Valid = 0.146  |  Acc Valid = 95.88%  |  Best Acc Valid = 96.09%
+Fri 18 Jul 2025 10:29:18 INFO Loss Test = 0.153  |  Acc Test = 95.61%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:30:21 INFO =====> Epoch 41 : Loss Train = 0.295  |  Acc Train = 91.30%
+Fri 18 Jul 2025 10:30:21 INFO Loss Valid = 0.142  |  Acc Valid = 96.07%  |  Best Acc Valid = 96.09%
+Fri 18 Jul 2025 10:30:21 INFO Loss Test = 0.156  |  Acc Test = 95.58%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:31:26 INFO =====> Epoch 42 : Loss Train = 0.296  |  Acc Train = 91.26%
+Fri 18 Jul 2025 10:31:26 INFO Loss Valid = 0.144  |  Acc Valid = 96.12%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:31:26 INFO Loss Test = 0.151  |  Acc Test = 95.65%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:32:30 INFO =====> Epoch 43 : Loss Train = 0.296  |  Acc Train = 91.29%
+Fri 18 Jul 2025 10:32:30 INFO Loss Valid = 0.148  |  Acc Valid = 95.72%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:32:30 INFO Loss Test = 0.157  |  Acc Test = 95.60%  |  Best Acc Test = 95.68%
+Fri 18 Jul 2025 10:33:35 INFO =====> Epoch 44 : Loss Train = 0.296  |  Acc Train = 91.35%
+Fri 18 Jul 2025 10:33:35 INFO Loss Valid = 0.146  |  Acc Valid = 95.88%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:33:35 INFO Loss Test = 0.154  |  Acc Test = 95.70%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:34:40 INFO =====> Epoch 45 : Loss Train = 0.298  |  Acc Train = 91.17%
+Fri 18 Jul 2025 10:34:40 INFO Loss Valid = 0.143  |  Acc Valid = 95.96%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:34:40 INFO Loss Test = 0.154  |  Acc Test = 95.59%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:35:45 INFO =====> Epoch 46 : Loss Train = 0.296  |  Acc Train = 91.28%
+Fri 18 Jul 2025 10:35:45 INFO Loss Valid = 0.147  |  Acc Valid = 96.06%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:35:45 INFO Loss Test = 0.157  |  Acc Test = 95.52%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:36:51 INFO =====> Epoch 47 : Loss Train = 0.301  |  Acc Train = 91.09%
+Fri 18 Jul 2025 10:36:51 INFO Loss Valid = 0.144  |  Acc Valid = 95.88%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:36:51 INFO Loss Test = 0.153  |  Acc Test = 95.63%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:37:56 INFO =====> Epoch 48 : Loss Train = 0.300  |  Acc Train = 91.14%
+Fri 18 Jul 2025 10:37:56 INFO Loss Valid = 0.149  |  Acc Valid = 95.81%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:37:56 INFO Loss Test = 0.161  |  Acc Test = 95.37%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:39:02 INFO =====> Epoch 49 : Loss Train = 0.303  |  Acc Train = 91.01%
+Fri 18 Jul 2025 10:39:02 INFO Loss Valid = 0.146  |  Acc Valid = 95.95%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:39:02 INFO Loss Test = 0.159  |  Acc Test = 95.60%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:40:07 INFO =====> Epoch 50 : Loss Train = 0.307  |  Acc Train = 90.95%
+Fri 18 Jul 2025 10:40:07 INFO Loss Valid = 0.148  |  Acc Valid = 95.88%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:40:07 INFO Loss Test = 0.161  |  Acc Test = 95.43%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:41:12 INFO =====> Epoch 51 : Loss Train = 0.314  |  Acc Train = 90.71%
+Fri 18 Jul 2025 10:41:12 INFO Loss Valid = 0.151  |  Acc Valid = 95.72%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:41:12 INFO Loss Test = 0.160  |  Acc Test = 95.48%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:42:18 INFO =====> Epoch 52 : Loss Train = 0.316  |  Acc Train = 90.68%
+Fri 18 Jul 2025 10:42:18 INFO Loss Valid = 0.152  |  Acc Valid = 95.71%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:42:18 INFO Loss Test = 0.158  |  Acc Test = 95.39%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:43:22 INFO =====> Epoch 53 : Loss Train = 0.321  |  Acc Train = 90.50%
+Fri 18 Jul 2025 10:43:22 INFO Loss Valid = 0.156  |  Acc Valid = 95.65%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:43:22 INFO Loss Test = 0.167  |  Acc Test = 95.27%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:44:27 INFO =====> Epoch 54 : Loss Train = 0.320  |  Acc Train = 90.66%
+Fri 18 Jul 2025 10:44:27 INFO Loss Valid = 0.155  |  Acc Valid = 95.89%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:44:27 INFO Loss Test = 0.169  |  Acc Test = 95.26%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:45:32 INFO =====> Epoch 55 : Loss Train = 0.332  |  Acc Train = 90.21%
+Fri 18 Jul 2025 10:45:32 INFO Loss Valid = 0.152  |  Acc Valid = 95.80%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:45:32 INFO Loss Test = 0.164  |  Acc Test = 95.41%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:46:36 INFO =====> Epoch 56 : Loss Train = 0.333  |  Acc Train = 90.21%
+Fri 18 Jul 2025 10:46:36 INFO Loss Valid = 0.167  |  Acc Valid = 95.29%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:46:36 INFO Loss Test = 0.179  |  Acc Test = 95.02%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:47:42 INFO =====> Epoch 57 : Loss Train = 0.336  |  Acc Train = 90.23%
+Fri 18 Jul 2025 10:47:42 INFO Loss Valid = 0.163  |  Acc Valid = 95.35%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:47:42 INFO Loss Test = 0.173  |  Acc Test = 95.10%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:48:47 INFO =====> Epoch 58 : Loss Train = 0.346  |  Acc Train = 89.85%
+Fri 18 Jul 2025 10:48:47 INFO Loss Valid = 0.169  |  Acc Valid = 95.45%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:48:47 INFO Loss Test = 0.190  |  Acc Test = 94.97%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:49:51 INFO =====> Epoch 59 : Loss Train = 0.352  |  Acc Train = 89.68%
+Fri 18 Jul 2025 10:49:51 INFO Loss Valid = 0.163  |  Acc Valid = 95.61%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:49:51 INFO Loss Test = 0.180  |  Acc Test = 95.17%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:50:57 INFO =====> Epoch 60 : Loss Train = 0.360  |  Acc Train = 89.52%
+Fri 18 Jul 2025 10:50:57 INFO Loss Valid = 0.187  |  Acc Valid = 94.83%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:50:57 INFO Loss Test = 0.197  |  Acc Test = 94.60%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:52:02 INFO =====> Epoch 61 : Loss Train = 0.358  |  Acc Train = 89.55%
+Fri 18 Jul 2025 10:52:02 INFO Loss Valid = 0.170  |  Acc Valid = 95.37%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:52:02 INFO Loss Test = 0.189  |  Acc Test = 94.79%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:53:08 INFO =====> Epoch 62 : Loss Train = 0.363  |  Acc Train = 89.47%
+Fri 18 Jul 2025 10:53:08 INFO Loss Valid = 0.182  |  Acc Valid = 95.08%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:53:08 INFO Loss Test = 0.203  |  Acc Test = 94.58%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:54:14 INFO =====> Epoch 63 : Loss Train = 0.373  |  Acc Train = 89.12%
+Fri 18 Jul 2025 10:54:14 INFO Loss Valid = 0.183  |  Acc Valid = 94.90%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:54:14 INFO Loss Test = 0.190  |  Acc Test = 94.74%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:55:19 INFO =====> Epoch 64 : Loss Train = 0.371  |  Acc Train = 89.26%
+Fri 18 Jul 2025 10:55:19 INFO Loss Valid = 0.202  |  Acc Valid = 94.92%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:55:19 INFO Loss Test = 0.214  |  Acc Test = 94.12%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:56:24 INFO =====> Epoch 65 : Loss Train = 0.370  |  Acc Train = 89.21%
+Fri 18 Jul 2025 10:56:24 INFO Loss Valid = 0.183  |  Acc Valid = 94.99%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:56:24 INFO Loss Test = 0.194  |  Acc Test = 94.59%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:57:29 INFO =====> Epoch 66 : Loss Train = 0.383  |  Acc Train = 88.82%
+Fri 18 Jul 2025 10:57:29 INFO Loss Valid = 0.197  |  Acc Valid = 94.78%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:57:29 INFO Loss Test = 0.204  |  Acc Test = 94.27%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:58:33 INFO =====> Epoch 67 : Loss Train = 0.371  |  Acc Train = 89.27%
+Fri 18 Jul 2025 10:58:33 INFO Loss Valid = 0.182  |  Acc Valid = 95.09%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:58:33 INFO Loss Test = 0.198  |  Acc Test = 94.51%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 10:59:37 INFO =====> Epoch 68 : Loss Train = 0.377  |  Acc Train = 89.09%
+Fri 18 Jul 2025 10:59:37 INFO Loss Valid = 0.183  |  Acc Valid = 94.93%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 10:59:37 INFO Loss Test = 0.210  |  Acc Test = 94.48%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:00:42 INFO =====> Epoch 69 : Loss Train = 0.385  |  Acc Train = 88.83%
+Fri 18 Jul 2025 11:00:42 INFO Loss Valid = 0.188  |  Acc Valid = 94.98%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:00:42 INFO Loss Test = 0.207  |  Acc Test = 94.23%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:01:48 INFO =====> Epoch 70 : Loss Train = 0.380  |  Acc Train = 88.99%
+Fri 18 Jul 2025 11:01:48 INFO Loss Valid = 0.189  |  Acc Valid = 94.85%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:01:48 INFO Loss Test = 0.204  |  Acc Test = 94.23%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:02:53 INFO =====> Epoch 71 : Loss Train = 0.381  |  Acc Train = 88.98%
+Fri 18 Jul 2025 11:02:53 INFO Loss Valid = 0.177  |  Acc Valid = 95.18%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:02:53 INFO Loss Test = 0.193  |  Acc Test = 94.66%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:03:58 INFO =====> Epoch 72 : Loss Train = 0.375  |  Acc Train = 89.10%
+Fri 18 Jul 2025 11:03:58 INFO Loss Valid = 0.174  |  Acc Valid = 95.08%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:03:58 INFO Loss Test = 0.198  |  Acc Test = 94.57%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:05:02 INFO =====> Epoch 73 : Loss Train = 0.380  |  Acc Train = 89.03%
+Fri 18 Jul 2025 11:05:02 INFO Loss Valid = 0.192  |  Acc Valid = 94.92%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:05:02 INFO Loss Test = 0.197  |  Acc Test = 94.50%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:06:07 INFO =====> Epoch 74 : Loss Train = 0.383  |  Acc Train = 88.98%
+Fri 18 Jul 2025 11:06:07 INFO Loss Valid = 0.201  |  Acc Valid = 94.72%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:06:07 INFO Loss Test = 0.227  |  Acc Test = 93.76%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:07:12 INFO =====> Epoch 75 : Loss Train = 0.387  |  Acc Train = 88.89%
+Fri 18 Jul 2025 11:07:12 INFO Loss Valid = 0.177  |  Acc Valid = 95.09%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:07:12 INFO Loss Test = 0.191  |  Acc Test = 95.04%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:08:18 INFO =====> Epoch 76 : Loss Train = 0.373  |  Acc Train = 89.24%
+Fri 18 Jul 2025 11:08:18 INFO Loss Valid = 0.178  |  Acc Valid = 95.14%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:08:18 INFO Loss Test = 0.201  |  Acc Test = 94.44%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:09:21 INFO =====> Epoch 77 : Loss Train = 0.375  |  Acc Train = 89.10%
+Fri 18 Jul 2025 11:09:21 INFO Loss Valid = 0.199  |  Acc Valid = 94.69%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:09:21 INFO Loss Test = 0.209  |  Acc Test = 94.21%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:10:26 INFO =====> Epoch 78 : Loss Train = 0.376  |  Acc Train = 89.07%
+Fri 18 Jul 2025 11:10:26 INFO Loss Valid = 0.180  |  Acc Valid = 95.09%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:10:26 INFO Loss Test = 0.190  |  Acc Test = 94.56%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:11:31 INFO =====> Epoch 79 : Loss Train = 0.372  |  Acc Train = 89.21%
+Fri 18 Jul 2025 11:11:31 INFO Loss Valid = 0.178  |  Acc Valid = 95.00%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:11:31 INFO Loss Test = 0.213  |  Acc Test = 94.13%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:12:37 INFO =====> Epoch 80 : Loss Train = 0.363  |  Acc Train = 89.52%
+Fri 18 Jul 2025 11:12:37 INFO Loss Valid = 0.193  |  Acc Valid = 94.97%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:12:37 INFO Loss Test = 0.203  |  Acc Test = 94.36%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:13:42 INFO =====> Epoch 81 : Loss Train = 0.363  |  Acc Train = 89.47%
+Fri 18 Jul 2025 11:13:42 INFO Loss Valid = 0.189  |  Acc Valid = 95.03%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:13:42 INFO Loss Test = 0.200  |  Acc Test = 94.80%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:14:47 INFO =====> Epoch 82 : Loss Train = 0.364  |  Acc Train = 89.46%
+Fri 18 Jul 2025 11:14:47 INFO Loss Valid = 0.182  |  Acc Valid = 94.86%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:14:47 INFO Loss Test = 0.199  |  Acc Test = 94.73%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:15:53 INFO =====> Epoch 83 : Loss Train = 0.356  |  Acc Train = 89.73%
+Fri 18 Jul 2025 11:15:53 INFO Loss Valid = 0.193  |  Acc Valid = 94.76%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:15:53 INFO Loss Test = 0.220  |  Acc Test = 94.27%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:16:59 INFO =====> Epoch 84 : Loss Train = 0.350  |  Acc Train = 89.88%
+Fri 18 Jul 2025 11:16:59 INFO Loss Valid = 0.174  |  Acc Valid = 95.55%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:16:59 INFO Loss Test = 0.189  |  Acc Test = 95.04%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:18:03 INFO =====> Epoch 85 : Loss Train = 0.344  |  Acc Train = 90.02%
+Fri 18 Jul 2025 11:18:03 INFO Loss Valid = 0.182  |  Acc Valid = 95.18%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:18:03 INFO Loss Test = 0.207  |  Acc Test = 94.31%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:19:08 INFO =====> Epoch 86 : Loss Train = 0.343  |  Acc Train = 90.06%
+Fri 18 Jul 2025 11:19:08 INFO Loss Valid = 0.172  |  Acc Valid = 95.39%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:19:08 INFO Loss Test = 0.190  |  Acc Test = 94.83%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:20:12 INFO =====> Epoch 87 : Loss Train = 0.342  |  Acc Train = 90.08%
+Fri 18 Jul 2025 11:20:12 INFO Loss Valid = 0.157  |  Acc Valid = 95.71%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:20:12 INFO Loss Test = 0.187  |  Acc Test = 94.89%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:21:17 INFO =====> Epoch 88 : Loss Train = 0.335  |  Acc Train = 90.32%
+Fri 18 Jul 2025 11:21:17 INFO Loss Valid = 0.171  |  Acc Valid = 95.62%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:21:17 INFO Loss Test = 0.190  |  Acc Test = 95.06%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:22:23 INFO =====> Epoch 89 : Loss Train = 0.330  |  Acc Train = 90.48%
+Fri 18 Jul 2025 11:22:23 INFO Loss Valid = 0.166  |  Acc Valid = 95.57%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:22:23 INFO Loss Test = 0.179  |  Acc Test = 95.12%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:23:28 INFO =====> Epoch 90 : Loss Train = 0.331  |  Acc Train = 90.42%
+Fri 18 Jul 2025 11:23:28 INFO Loss Valid = 0.172  |  Acc Valid = 95.43%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:23:28 INFO Loss Test = 0.184  |  Acc Test = 95.07%  |  Best Acc Test = 95.70%
+Fri 18 Jul 2025 11:24:34 INFO =====> Epoch 91 : Loss Train = 0.322  |  Acc Train = 90.72%
+Fri 18 Jul 2025 11:24:34 INFO Loss Valid = 0.164  |  Acc Valid = 95.58%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:24:34 INFO Loss Test = 0.163  |  Acc Test = 95.71%  |  Best Acc Test = 95.71%
+Fri 18 Jul 2025 11:25:38 INFO =====> Epoch 92 : Loss Train = 0.314  |  Acc Train = 90.94%
+Fri 18 Jul 2025 11:25:38 INFO Loss Valid = 0.160  |  Acc Valid = 95.82%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:25:38 INFO Loss Test = 0.168  |  Acc Test = 95.48%  |  Best Acc Test = 95.71%
+Fri 18 Jul 2025 11:26:43 INFO =====> Epoch 93 : Loss Train = 0.311  |  Acc Train = 90.89%
+Fri 18 Jul 2025 11:26:43 INFO Loss Valid = 0.152  |  Acc Valid = 95.96%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:26:43 INFO Loss Test = 0.162  |  Acc Test = 95.57%  |  Best Acc Test = 95.71%
+Fri 18 Jul 2025 11:27:46 INFO =====> Epoch 94 : Loss Train = 0.301  |  Acc Train = 91.20%
+Fri 18 Jul 2025 11:27:46 INFO Loss Valid = 0.151  |  Acc Valid = 95.88%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:27:46 INFO Loss Test = 0.169  |  Acc Test = 95.38%  |  Best Acc Test = 95.71%
+Fri 18 Jul 2025 11:28:52 INFO =====> Epoch 95 : Loss Train = 0.300  |  Acc Train = 91.14%
+Fri 18 Jul 2025 11:28:52 INFO Loss Valid = 0.152  |  Acc Valid = 95.83%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:28:52 INFO Loss Test = 0.158  |  Acc Test = 95.77%  |  Best Acc Test = 95.77%
+Fri 18 Jul 2025 11:29:57 INFO =====> Epoch 96 : Loss Train = 0.289  |  Acc Train = 91.61%
+Fri 18 Jul 2025 11:29:57 INFO Loss Valid = 0.161  |  Acc Valid = 95.84%  |  Best Acc Valid = 96.12%
+Fri 18 Jul 2025 11:29:57 INFO Loss Test = 0.172  |  Acc Test = 95.28%  |  Best Acc Test = 95.77%
+Fri 18 Jul 2025 11:31:01 INFO =====> Epoch 97 : Loss Train = 0.281  |  Acc Train = 91.76%
+Fri 18 Jul 2025 11:31:01 INFO Loss Valid = 0.149  |  Acc Valid = 96.15%  |  Best Acc Valid = 96.15%
+Fri 18 Jul 2025 11:31:01 INFO Loss Test = 0.161  |  Acc Test = 95.61%  |  Best Acc Test = 95.77%
+Fri 18 Jul 2025 11:32:07 INFO =====> Epoch 98 : Loss Train = 0.285  |  Acc Train = 91.67%
+Fri 18 Jul 2025 11:32:07 INFO Loss Valid = 0.157  |  Acc Valid = 95.66%  |  Best Acc Valid = 96.15%
+Fri 18 Jul 2025 11:32:07 INFO Loss Test = 0.165  |  Acc Test = 95.35%  |  Best Acc Test = 95.77%
+Fri 18 Jul 2025 11:33:13 INFO =====> Epoch 99 : Loss Train = 0.278  |  Acc Train = 91.89%
+Fri 18 Jul 2025 11:33:13 INFO Loss Valid = 0.148  |  Acc Valid = 96.24%  |  Best Acc Valid = 96.24%
+Fri 18 Jul 2025 11:33:13 INFO Loss Test = 0.154  |  Acc Test = 95.82%  |  Best Acc Test = 95.82%
+Fri 18 Jul 2025 11:34:18 INFO =====> Epoch 100 : Loss Train = 0.267  |  Acc Train = 92.09%
+Fri 18 Jul 2025 11:34:18 INFO Loss Valid = 0.146  |  Acc Valid = 95.94%  |  Best Acc Valid = 96.24%
+Fri 18 Jul 2025 11:34:18 INFO Loss Test = 0.159  |  Acc Test = 95.55%  |  Best Acc Test = 95.82%
+Fri 18 Jul 2025 11:35:22 INFO =====> Epoch 101 : Loss Train = 0.265  |  Acc Train = 92.21%
+Fri 18 Jul 2025 11:35:22 INFO Loss Valid = 0.151  |  Acc Valid = 96.11%  |  Best Acc Valid = 96.24%
+Fri 18 Jul 2025 11:35:22 INFO Loss Test = 0.162  |  Acc Test = 95.73%  |  Best Acc Test = 95.82%
+Fri 18 Jul 2025 11:36:28 INFO =====> Epoch 102 : Loss Train = 0.261  |  Acc Train = 92.27%
+Fri 18 Jul 2025 11:36:28 INFO Loss Valid = 0.147  |  Acc Valid = 96.19%  |  Best Acc Valid = 96.24%
+Fri 18 Jul 2025 11:36:28 INFO Loss Test = 0.152  |  Acc Test = 95.90%  |  Best Acc Test = 95.90%
+Fri 18 Jul 2025 11:37:33 INFO =====> Epoch 103 : Loss Train = 0.249  |  Acc Train = 92.57%
+Fri 18 Jul 2025 11:37:33 INFO Loss Valid = 0.141  |  Acc Valid = 96.26%  |  Best Acc Valid = 96.26%
+Fri 18 Jul 2025 11:37:33 INFO Loss Test = 0.142  |  Acc Test = 96.07%  |  Best Acc Test = 96.07%
+Fri 18 Jul 2025 11:38:37 INFO =====> Epoch 104 : Loss Train = 0.249  |  Acc Train = 92.65%
+Fri 18 Jul 2025 11:38:37 INFO Loss Valid = 0.140  |  Acc Valid = 96.35%  |  Best Acc Valid = 96.35%
+Fri 18 Jul 2025 11:38:37 INFO Loss Test = 0.153  |  Acc Test = 95.79%  |  Best Acc Test = 96.07%
+Fri 18 Jul 2025 11:39:41 INFO =====> Epoch 105 : Loss Train = 0.244  |  Acc Train = 92.78%
+Fri 18 Jul 2025 11:39:41 INFO Loss Valid = 0.144  |  Acc Valid = 96.24%  |  Best Acc Valid = 96.35%
+Fri 18 Jul 2025 11:39:41 INFO Loss Test = 0.151  |  Acc Test = 95.88%  |  Best Acc Test = 96.07%
+Fri 18 Jul 2025 11:40:46 INFO =====> Epoch 106 : Loss Train = 0.231  |  Acc Train = 93.14%
+Fri 18 Jul 2025 11:40:46 INFO Loss Valid = 0.142  |  Acc Valid = 96.24%  |  Best Acc Valid = 96.35%
+Fri 18 Jul 2025 11:40:46 INFO Loss Test = 0.150  |  Acc Test = 95.82%  |  Best Acc Test = 96.07%
+Fri 18 Jul 2025 11:41:51 INFO =====> Epoch 107 : Loss Train = 0.232  |  Acc Train = 93.06%
+Fri 18 Jul 2025 11:41:51 INFO Loss Valid = 0.139  |  Acc Valid = 96.27%  |  Best Acc Valid = 96.35%
+Fri 18 Jul 2025 11:41:51 INFO Loss Test = 0.140  |  Acc Test = 96.07%  |  Best Acc Test = 96.07%
+Fri 18 Jul 2025 11:42:54 INFO =====> Epoch 108 : Loss Train = 0.231  |  Acc Train = 93.16%
+Fri 18 Jul 2025 11:42:54 INFO Loss Valid = 0.141  |  Acc Valid = 96.29%  |  Best Acc Valid = 96.35%
+Fri 18 Jul 2025 11:42:54 INFO Loss Test = 0.142  |  Acc Test = 96.27%  |  Best Acc Test = 96.27%
+Fri 18 Jul 2025 11:43:59 INFO =====> Epoch 109 : Loss Train = 0.222  |  Acc Train = 93.45%
+Fri 18 Jul 2025 11:43:59 INFO Loss Valid = 0.136  |  Acc Valid = 96.39%  |  Best Acc Valid = 96.39%
+Fri 18 Jul 2025 11:43:59 INFO Loss Test = 0.136  |  Acc Test = 96.08%  |  Best Acc Test = 96.27%
+Fri 18 Jul 2025 11:45:03 INFO =====> Epoch 110 : Loss Train = 0.215  |  Acc Train = 93.58%
+Fri 18 Jul 2025 11:45:03 INFO Loss Valid = 0.133  |  Acc Valid = 96.28%  |  Best Acc Valid = 96.39%
+Fri 18 Jul 2025 11:45:03 INFO Loss Test = 0.143  |  Acc Test = 96.06%  |  Best Acc Test = 96.27%
+Fri 18 Jul 2025 11:46:09 INFO =====> Epoch 111 : Loss Train = 0.218  |  Acc Train = 93.47%
+Fri 18 Jul 2025 11:46:09 INFO Loss Valid = 0.133  |  Acc Valid = 96.36%  |  Best Acc Valid = 96.39%
+Fri 18 Jul 2025 11:46:09 INFO Loss Test = 0.140  |  Acc Test = 96.01%  |  Best Acc Test = 96.27%
+Fri 18 Jul 2025 11:47:14 INFO =====> Epoch 112 : Loss Train = 0.217  |  Acc Train = 93.50%
+Fri 18 Jul 2025 11:47:14 INFO Loss Valid = 0.135  |  Acc Valid = 96.32%  |  Best Acc Valid = 96.39%
+Fri 18 Jul 2025 11:47:14 INFO Loss Test = 0.139  |  Acc Test = 96.06%  |  Best Acc Test = 96.27%
+Fri 18 Jul 2025 11:48:19 INFO =====> Epoch 113 : Loss Train = 0.209  |  Acc Train = 93.79%
+Fri 18 Jul 2025 11:48:19 INFO Loss Valid = 0.133  |  Acc Valid = 96.34%  |  Best Acc Valid = 96.39%
+Fri 18 Jul 2025 11:48:19 INFO Loss Test = 0.138  |  Acc Test = 96.27%  |  Best Acc Test = 96.27%
+Fri 18 Jul 2025 11:49:22 INFO =====> Epoch 114 : Loss Train = 0.209  |  Acc Train = 93.80%
+Fri 18 Jul 2025 11:49:22 INFO Loss Valid = 0.129  |  Acc Valid = 96.40%  |  Best Acc Valid = 96.40%
+Fri 18 Jul 2025 11:49:22 INFO Loss Test = 0.136  |  Acc Test = 96.32%  |  Best Acc Test = 96.32%
+Fri 18 Jul 2025 11:50:28 INFO =====> Epoch 115 : Loss Train = 0.210  |  Acc Train = 93.74%
+Fri 18 Jul 2025 11:50:28 INFO Loss Valid = 0.129  |  Acc Valid = 96.46%  |  Best Acc Valid = 96.46%
+Fri 18 Jul 2025 11:50:28 INFO Loss Test = 0.134  |  Acc Test = 96.32%  |  Best Acc Test = 96.32%
+Fri 18 Jul 2025 11:51:32 INFO =====> Epoch 116 : Loss Train = 0.205  |  Acc Train = 93.89%
+Fri 18 Jul 2025 11:51:32 INFO Loss Valid = 0.129  |  Acc Valid = 96.57%  |  Best Acc Valid = 96.57%
+Fri 18 Jul 2025 11:51:32 INFO Loss Test = 0.135  |  Acc Test = 96.24%  |  Best Acc Test = 96.32%
+Fri 18 Jul 2025 11:52:37 INFO =====> Epoch 117 : Loss Train = 0.210  |  Acc Train = 93.71%
+Fri 18 Jul 2025 11:52:37 INFO Loss Valid = 0.126  |  Acc Valid = 96.59%  |  Best Acc Valid = 96.59%
+Fri 18 Jul 2025 11:52:37 INFO Loss Test = 0.136  |  Acc Test = 96.30%  |  Best Acc Test = 96.32%
+Fri 18 Jul 2025 11:53:41 INFO =====> Epoch 118 : Loss Train = 0.201  |  Acc Train = 93.95%
+Fri 18 Jul 2025 11:53:41 INFO Loss Valid = 0.128  |  Acc Valid = 96.47%  |  Best Acc Valid = 96.59%
+Fri 18 Jul 2025 11:53:41 INFO Loss Test = 0.133  |  Acc Test = 96.41%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 11:54:46 INFO =====> Epoch 119 : Loss Train = 0.204  |  Acc Train = 93.97%
+Fri 18 Jul 2025 11:54:46 INFO Loss Valid = 0.130  |  Acc Valid = 96.52%  |  Best Acc Valid = 96.59%
+Fri 18 Jul 2025 11:54:46 INFO Loss Test = 0.135  |  Acc Test = 96.36%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 11:55:49 INFO =====> Epoch 120 : Loss Train = 0.204  |  Acc Train = 93.89%
+Fri 18 Jul 2025 11:55:49 INFO Loss Valid = 0.127  |  Acc Valid = 96.59%  |  Best Acc Valid = 96.59%
+Fri 18 Jul 2025 11:55:49 INFO Loss Test = 0.135  |  Acc Test = 96.41%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 11:56:54 INFO =====> Epoch 121 : Loss Train = 0.205  |  Acc Train = 93.86%
+Fri 18 Jul 2025 11:56:54 INFO Loss Valid = 0.129  |  Acc Valid = 96.44%  |  Best Acc Valid = 96.59%
+Fri 18 Jul 2025 11:56:54 INFO Loss Test = 0.134  |  Acc Test = 96.23%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 11:58:00 INFO =====> Epoch 122 : Loss Train = 0.205  |  Acc Train = 93.85%
+Fri 18 Jul 2025 11:58:00 INFO Loss Valid = 0.129  |  Acc Valid = 96.43%  |  Best Acc Valid = 96.59%
+Fri 18 Jul 2025 11:58:00 INFO Loss Test = 0.136  |  Acc Test = 96.32%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 11:59:05 INFO =====> Epoch 123 : Loss Train = 0.205  |  Acc Train = 93.89%
+Fri 18 Jul 2025 11:59:05 INFO Loss Valid = 0.128  |  Acc Valid = 96.51%  |  Best Acc Valid = 96.59%
+Fri 18 Jul 2025 11:59:05 INFO Loss Test = 0.135  |  Acc Test = 96.32%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:00:11 INFO =====> Epoch 124 : Loss Train = 0.204  |  Acc Train = 93.94%
+Fri 18 Jul 2025 12:00:11 INFO Loss Valid = 0.127  |  Acc Valid = 96.55%  |  Best Acc Valid = 96.59%
+Fri 18 Jul 2025 12:00:11 INFO Loss Test = 0.136  |  Acc Test = 96.28%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:01:15 INFO =====> Epoch 125 : Loss Train = 0.207  |  Acc Train = 93.84%
+Fri 18 Jul 2025 12:01:15 INFO Loss Valid = 0.125  |  Acc Valid = 96.72%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:01:15 INFO Loss Test = 0.139  |  Acc Test = 96.22%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:02:20 INFO =====> Epoch 126 : Loss Train = 0.204  |  Acc Train = 94.00%
+Fri 18 Jul 2025 12:02:20 INFO Loss Valid = 0.127  |  Acc Valid = 96.48%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:02:20 INFO Loss Test = 0.144  |  Acc Test = 96.19%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:03:24 INFO =====> Epoch 127 : Loss Train = 0.209  |  Acc Train = 93.77%
+Fri 18 Jul 2025 12:03:24 INFO Loss Valid = 0.130  |  Acc Valid = 96.49%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:03:24 INFO Loss Test = 0.135  |  Acc Test = 96.21%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:04:29 INFO =====> Epoch 128 : Loss Train = 0.203  |  Acc Train = 93.89%
+Fri 18 Jul 2025 12:04:29 INFO Loss Valid = 0.128  |  Acc Valid = 96.47%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:04:29 INFO Loss Test = 0.135  |  Acc Test = 96.35%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:05:34 INFO =====> Epoch 129 : Loss Train = 0.207  |  Acc Train = 93.83%
+Fri 18 Jul 2025 12:05:34 INFO Loss Valid = 0.127  |  Acc Valid = 96.60%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:05:34 INFO Loss Test = 0.139  |  Acc Test = 96.35%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:06:38 INFO =====> Epoch 130 : Loss Train = 0.210  |  Acc Train = 93.71%
+Fri 18 Jul 2025 12:06:38 INFO Loss Valid = 0.134  |  Acc Valid = 96.27%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:06:38 INFO Loss Test = 0.142  |  Acc Test = 96.15%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:07:43 INFO =====> Epoch 131 : Loss Train = 0.212  |  Acc Train = 93.69%
+Fri 18 Jul 2025 12:07:43 INFO Loss Valid = 0.137  |  Acc Valid = 96.42%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:07:43 INFO Loss Test = 0.141  |  Acc Test = 96.12%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:08:50 INFO =====> Epoch 132 : Loss Train = 0.215  |  Acc Train = 93.54%
+Fri 18 Jul 2025 12:08:50 INFO Loss Valid = 0.134  |  Acc Valid = 96.49%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:08:50 INFO Loss Test = 0.144  |  Acc Test = 96.22%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:09:55 INFO =====> Epoch 133 : Loss Train = 0.220  |  Acc Train = 93.47%
+Fri 18 Jul 2025 12:09:55 INFO Loss Valid = 0.133  |  Acc Valid = 96.47%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:09:55 INFO Loss Test = 0.139  |  Acc Test = 96.23%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:11:01 INFO =====> Epoch 134 : Loss Train = 0.217  |  Acc Train = 93.55%
+Fri 18 Jul 2025 12:11:01 INFO Loss Valid = 0.138  |  Acc Valid = 96.36%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:11:01 INFO Loss Test = 0.144  |  Acc Test = 96.08%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:12:06 INFO =====> Epoch 135 : Loss Train = 0.225  |  Acc Train = 93.31%
+Fri 18 Jul 2025 12:12:06 INFO Loss Valid = 0.139  |  Acc Valid = 96.38%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:12:06 INFO Loss Test = 0.148  |  Acc Test = 96.11%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:13:11 INFO =====> Epoch 136 : Loss Train = 0.227  |  Acc Train = 93.27%
+Fri 18 Jul 2025 12:13:11 INFO Loss Valid = 0.141  |  Acc Valid = 96.27%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:13:11 INFO Loss Test = 0.145  |  Acc Test = 96.12%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:14:15 INFO =====> Epoch 137 : Loss Train = 0.235  |  Acc Train = 92.98%
+Fri 18 Jul 2025 12:14:15 INFO Loss Valid = 0.138  |  Acc Valid = 96.23%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:14:15 INFO Loss Test = 0.147  |  Acc Test = 95.99%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:15:20 INFO =====> Epoch 138 : Loss Train = 0.235  |  Acc Train = 93.02%
+Fri 18 Jul 2025 12:15:20 INFO Loss Valid = 0.138  |  Acc Valid = 96.23%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:15:20 INFO Loss Test = 0.150  |  Acc Test = 95.86%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:16:25 INFO =====> Epoch 139 : Loss Train = 0.232  |  Acc Train = 93.16%
+Fri 18 Jul 2025 12:16:25 INFO Loss Valid = 0.144  |  Acc Valid = 96.09%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:16:25 INFO Loss Test = 0.157  |  Acc Test = 95.76%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:17:29 INFO =====> Epoch 140 : Loss Train = 0.242  |  Acc Train = 92.86%
+Fri 18 Jul 2025 12:17:29 INFO Loss Valid = 0.146  |  Acc Valid = 95.98%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:17:29 INFO Loss Test = 0.157  |  Acc Test = 95.90%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:18:34 INFO =====> Epoch 141 : Loss Train = 0.240  |  Acc Train = 92.89%
+Fri 18 Jul 2025 12:18:34 INFO Loss Valid = 0.148  |  Acc Valid = 96.18%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:18:34 INFO Loss Test = 0.158  |  Acc Test = 95.89%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:19:40 INFO =====> Epoch 142 : Loss Train = 0.255  |  Acc Train = 92.44%
+Fri 18 Jul 2025 12:19:40 INFO Loss Valid = 0.143  |  Acc Valid = 96.25%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:19:40 INFO Loss Test = 0.160  |  Acc Test = 95.81%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:20:43 INFO =====> Epoch 143 : Loss Train = 0.259  |  Acc Train = 92.39%
+Fri 18 Jul 2025 12:20:43 INFO Loss Valid = 0.146  |  Acc Valid = 96.30%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:20:43 INFO Loss Test = 0.170  |  Acc Test = 95.46%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:21:49 INFO =====> Epoch 144 : Loss Train = 0.263  |  Acc Train = 92.29%
+Fri 18 Jul 2025 12:21:49 INFO Loss Valid = 0.166  |  Acc Valid = 95.91%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:21:49 INFO Loss Test = 0.160  |  Acc Test = 95.61%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:22:54 INFO =====> Epoch 145 : Loss Train = 0.266  |  Acc Train = 92.19%
+Fri 18 Jul 2025 12:22:54 INFO Loss Valid = 0.154  |  Acc Valid = 95.93%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:22:54 INFO Loss Test = 0.162  |  Acc Test = 95.78%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:23:59 INFO =====> Epoch 146 : Loss Train = 0.272  |  Acc Train = 91.95%
+Fri 18 Jul 2025 12:23:59 INFO Loss Valid = 0.164  |  Acc Valid = 95.85%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:23:59 INFO Loss Test = 0.170  |  Acc Test = 95.57%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:25:04 INFO =====> Epoch 147 : Loss Train = 0.271  |  Acc Train = 91.97%
+Fri 18 Jul 2025 12:25:04 INFO Loss Valid = 0.165  |  Acc Valid = 95.74%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:25:04 INFO Loss Test = 0.173  |  Acc Test = 95.70%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:26:09 INFO =====> Epoch 148 : Loss Train = 0.281  |  Acc Train = 91.74%
+Fri 18 Jul 2025 12:26:09 INFO Loss Valid = 0.150  |  Acc Valid = 95.99%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:26:09 INFO Loss Test = 0.159  |  Acc Test = 95.55%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:27:13 INFO =====> Epoch 149 : Loss Train = 0.287  |  Acc Train = 91.59%
+Fri 18 Jul 2025 12:27:13 INFO Loss Valid = 0.139  |  Acc Valid = 96.23%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:27:13 INFO Loss Test = 0.154  |  Acc Test = 95.79%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:28:18 INFO =====> Epoch 150 : Loss Train = 0.287  |  Acc Train = 91.58%
+Fri 18 Jul 2025 12:28:18 INFO Loss Valid = 0.167  |  Acc Valid = 95.65%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:28:18 INFO Loss Test = 0.177  |  Acc Test = 95.16%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:29:22 INFO =====> Epoch 151 : Loss Train = 0.282  |  Acc Train = 91.75%
+Fri 18 Jul 2025 12:29:22 INFO Loss Valid = 0.166  |  Acc Valid = 95.83%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:29:22 INFO Loss Test = 0.177  |  Acc Test = 95.35%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:30:27 INFO =====> Epoch 152 : Loss Train = 0.292  |  Acc Train = 91.39%
+Fri 18 Jul 2025 12:30:27 INFO Loss Valid = 0.153  |  Acc Valid = 96.00%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:30:27 INFO Loss Test = 0.168  |  Acc Test = 95.52%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:31:32 INFO =====> Epoch 153 : Loss Train = 0.290  |  Acc Train = 91.51%
+Fri 18 Jul 2025 12:31:32 INFO Loss Valid = 0.161  |  Acc Valid = 95.87%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:31:32 INFO Loss Test = 0.161  |  Acc Test = 95.60%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:32:37 INFO =====> Epoch 154 : Loss Train = 0.298  |  Acc Train = 91.41%
+Fri 18 Jul 2025 12:32:37 INFO Loss Valid = 0.171  |  Acc Valid = 95.89%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:32:37 INFO Loss Test = 0.180  |  Acc Test = 95.18%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:33:42 INFO =====> Epoch 155 : Loss Train = 0.293  |  Acc Train = 91.39%
+Fri 18 Jul 2025 12:33:42 INFO Loss Valid = 0.169  |  Acc Valid = 95.65%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:33:42 INFO Loss Test = 0.176  |  Acc Test = 95.25%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:34:47 INFO =====> Epoch 156 : Loss Train = 0.298  |  Acc Train = 91.27%
+Fri 18 Jul 2025 12:34:47 INFO Loss Valid = 0.160  |  Acc Valid = 95.74%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:34:47 INFO Loss Test = 0.165  |  Acc Test = 95.57%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:35:52 INFO =====> Epoch 157 : Loss Train = 0.300  |  Acc Train = 91.36%
+Fri 18 Jul 2025 12:35:52 INFO Loss Valid = 0.189  |  Acc Valid = 95.27%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:35:52 INFO Loss Test = 0.192  |  Acc Test = 94.86%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:36:56 INFO =====> Epoch 158 : Loss Train = 0.297  |  Acc Train = 91.45%
+Fri 18 Jul 2025 12:36:56 INFO Loss Valid = 0.164  |  Acc Valid = 95.79%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:36:56 INFO Loss Test = 0.162  |  Acc Test = 95.64%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:38:02 INFO =====> Epoch 159 : Loss Train = 0.298  |  Acc Train = 91.39%
+Fri 18 Jul 2025 12:38:02 INFO Loss Valid = 0.169  |  Acc Valid = 95.50%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:38:02 INFO Loss Test = 0.176  |  Acc Test = 95.28%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:39:05 INFO =====> Epoch 160 : Loss Train = 0.293  |  Acc Train = 91.49%
+Fri 18 Jul 2025 12:39:05 INFO Loss Valid = 0.156  |  Acc Valid = 95.88%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:39:05 INFO Loss Test = 0.162  |  Acc Test = 95.49%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:40:09 INFO =====> Epoch 161 : Loss Train = 0.293  |  Acc Train = 91.50%
+Fri 18 Jul 2025 12:40:09 INFO Loss Valid = 0.219  |  Acc Valid = 94.60%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:40:09 INFO Loss Test = 0.216  |  Acc Test = 94.36%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:41:14 INFO =====> Epoch 162 : Loss Train = 0.303  |  Acc Train = 91.19%
+Fri 18 Jul 2025 12:41:14 INFO Loss Valid = 0.170  |  Acc Valid = 95.51%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:41:14 INFO Loss Test = 0.192  |  Acc Test = 95.08%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:42:18 INFO =====> Epoch 163 : Loss Train = 0.290  |  Acc Train = 91.61%
+Fri 18 Jul 2025 12:42:18 INFO Loss Valid = 0.166  |  Acc Valid = 95.59%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:42:18 INFO Loss Test = 0.176  |  Acc Test = 95.11%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:43:23 INFO =====> Epoch 164 : Loss Train = 0.291  |  Acc Train = 91.47%
+Fri 18 Jul 2025 12:43:23 INFO Loss Valid = 0.168  |  Acc Valid = 95.79%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:43:23 INFO Loss Test = 0.166  |  Acc Test = 95.47%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:44:27 INFO =====> Epoch 165 : Loss Train = 0.287  |  Acc Train = 91.68%
+Fri 18 Jul 2025 12:44:27 INFO Loss Valid = 0.155  |  Acc Valid = 95.90%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:44:27 INFO Loss Test = 0.171  |  Acc Test = 95.45%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:45:31 INFO =====> Epoch 166 : Loss Train = 0.293  |  Acc Train = 91.52%
+Fri 18 Jul 2025 12:45:31 INFO Loss Valid = 0.160  |  Acc Valid = 95.96%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:45:31 INFO Loss Test = 0.172  |  Acc Test = 95.23%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:46:34 INFO =====> Epoch 167 : Loss Train = 0.276  |  Acc Train = 91.89%
+Fri 18 Jul 2025 12:46:34 INFO Loss Valid = 0.156  |  Acc Valid = 95.91%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:46:34 INFO Loss Test = 0.165  |  Acc Test = 95.53%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:47:38 INFO =====> Epoch 168 : Loss Train = 0.278  |  Acc Train = 91.82%
+Fri 18 Jul 2025 12:47:38 INFO Loss Valid = 0.147  |  Acc Valid = 96.06%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:47:38 INFO Loss Test = 0.159  |  Acc Test = 95.79%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:48:43 INFO =====> Epoch 169 : Loss Train = 0.283  |  Acc Train = 91.75%
+Fri 18 Jul 2025 12:48:43 INFO Loss Valid = 0.160  |  Acc Valid = 95.92%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:48:43 INFO Loss Test = 0.156  |  Acc Test = 95.73%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:49:48 INFO =====> Epoch 170 : Loss Train = 0.279  |  Acc Train = 91.90%
+Fri 18 Jul 2025 12:49:48 INFO Loss Valid = 0.158  |  Acc Valid = 95.88%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:49:48 INFO Loss Test = 0.156  |  Acc Test = 95.92%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:50:52 INFO =====> Epoch 171 : Loss Train = 0.275  |  Acc Train = 91.97%
+Fri 18 Jul 2025 12:50:52 INFO Loss Valid = 0.146  |  Acc Valid = 96.31%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:50:52 INFO Loss Test = 0.145  |  Acc Test = 95.89%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:51:56 INFO =====> Epoch 172 : Loss Train = 0.269  |  Acc Train = 92.11%
+Fri 18 Jul 2025 12:51:56 INFO Loss Valid = 0.149  |  Acc Valid = 96.14%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:51:56 INFO Loss Test = 0.156  |  Acc Test = 95.81%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:52:59 INFO =====> Epoch 173 : Loss Train = 0.256  |  Acc Train = 92.52%
+Fri 18 Jul 2025 12:52:59 INFO Loss Valid = 0.152  |  Acc Valid = 96.02%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:52:59 INFO Loss Test = 0.160  |  Acc Test = 95.59%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:54:04 INFO =====> Epoch 174 : Loss Train = 0.263  |  Acc Train = 92.27%
+Fri 18 Jul 2025 12:54:04 INFO Loss Valid = 0.143  |  Acc Valid = 96.07%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:54:04 INFO Loss Test = 0.136  |  Acc Test = 96.17%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:55:08 INFO =====> Epoch 175 : Loss Train = 0.255  |  Acc Train = 92.52%
+Fri 18 Jul 2025 12:55:08 INFO Loss Valid = 0.139  |  Acc Valid = 96.19%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:55:08 INFO Loss Test = 0.154  |  Acc Test = 95.73%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:56:12 INFO =====> Epoch 176 : Loss Train = 0.252  |  Acc Train = 92.61%
+Fri 18 Jul 2025 12:56:12 INFO Loss Valid = 0.153  |  Acc Valid = 96.12%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:56:12 INFO Loss Test = 0.156  |  Acc Test = 96.01%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:57:17 INFO =====> Epoch 177 : Loss Train = 0.249  |  Acc Train = 92.71%
+Fri 18 Jul 2025 12:57:17 INFO Loss Valid = 0.151  |  Acc Valid = 96.23%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:57:17 INFO Loss Test = 0.154  |  Acc Test = 95.96%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:58:21 INFO =====> Epoch 178 : Loss Train = 0.239  |  Acc Train = 93.02%
+Fri 18 Jul 2025 12:58:21 INFO Loss Valid = 0.145  |  Acc Valid = 96.08%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:58:21 INFO Loss Test = 0.142  |  Acc Test = 96.07%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 12:59:25 INFO =====> Epoch 179 : Loss Train = 0.235  |  Acc Train = 93.05%
+Fri 18 Jul 2025 12:59:25 INFO Loss Valid = 0.149  |  Acc Valid = 96.12%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 12:59:25 INFO Loss Test = 0.155  |  Acc Test = 95.97%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:00:29 INFO =====> Epoch 180 : Loss Train = 0.232  |  Acc Train = 93.18%
+Fri 18 Jul 2025 13:00:29 INFO Loss Valid = 0.143  |  Acc Valid = 96.16%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:00:29 INFO Loss Test = 0.141  |  Acc Test = 96.01%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:01:34 INFO =====> Epoch 181 : Loss Train = 0.226  |  Acc Train = 93.31%
+Fri 18 Jul 2025 13:01:34 INFO Loss Valid = 0.140  |  Acc Valid = 96.39%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:01:34 INFO Loss Test = 0.144  |  Acc Test = 96.28%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:02:36 INFO =====> Epoch 182 : Loss Train = 0.228  |  Acc Train = 93.29%
+Fri 18 Jul 2025 13:02:36 INFO Loss Valid = 0.147  |  Acc Valid = 96.36%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:02:36 INFO Loss Test = 0.141  |  Acc Test = 96.21%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:03:41 INFO =====> Epoch 183 : Loss Train = 0.219  |  Acc Train = 93.51%
+Fri 18 Jul 2025 13:03:41 INFO Loss Valid = 0.141  |  Acc Valid = 96.33%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:03:41 INFO Loss Test = 0.138  |  Acc Test = 96.26%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:04:45 INFO =====> Epoch 184 : Loss Train = 0.215  |  Acc Train = 93.70%
+Fri 18 Jul 2025 13:04:45 INFO Loss Valid = 0.136  |  Acc Valid = 96.43%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:04:45 INFO Loss Test = 0.137  |  Acc Test = 96.34%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:05:49 INFO =====> Epoch 185 : Loss Train = 0.210  |  Acc Train = 93.70%
+Fri 18 Jul 2025 13:05:49 INFO Loss Valid = 0.131  |  Acc Valid = 96.50%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:05:49 INFO Loss Test = 0.143  |  Acc Test = 96.31%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:06:54 INFO =====> Epoch 186 : Loss Train = 0.207  |  Acc Train = 93.87%
+Fri 18 Jul 2025 13:06:54 INFO Loss Valid = 0.138  |  Acc Valid = 96.32%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:06:54 INFO Loss Test = 0.138  |  Acc Test = 96.25%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:07:57 INFO =====> Epoch 187 : Loss Train = 0.200  |  Acc Train = 94.09%
+Fri 18 Jul 2025 13:07:57 INFO Loss Valid = 0.128  |  Acc Valid = 96.71%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:07:57 INFO Loss Test = 0.138  |  Acc Test = 96.28%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:09:00 INFO =====> Epoch 188 : Loss Train = 0.195  |  Acc Train = 94.22%
+Fri 18 Jul 2025 13:09:00 INFO Loss Valid = 0.138  |  Acc Valid = 96.40%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:09:00 INFO Loss Test = 0.137  |  Acc Test = 96.27%  |  Best Acc Test = 96.41%
+Fri 18 Jul 2025 13:10:04 INFO =====> Epoch 189 : Loss Train = 0.195  |  Acc Train = 94.24%
+Fri 18 Jul 2025 13:10:04 INFO Loss Valid = 0.132  |  Acc Valid = 96.51%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:10:04 INFO Loss Test = 0.133  |  Acc Test = 96.42%  |  Best Acc Test = 96.42%
+Fri 18 Jul 2025 13:11:08 INFO =====> Epoch 190 : Loss Train = 0.190  |  Acc Train = 94.32%
+Fri 18 Jul 2025 13:11:08 INFO Loss Valid = 0.140  |  Acc Valid = 96.33%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:11:08 INFO Loss Test = 0.134  |  Acc Test = 96.41%  |  Best Acc Test = 96.42%
+Fri 18 Jul 2025 13:12:18 INFO =====> Epoch 191 : Loss Train = 0.192  |  Acc Train = 94.27%
+Fri 18 Jul 2025 13:12:18 INFO Loss Valid = 0.129  |  Acc Valid = 96.65%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:12:18 INFO Loss Test = 0.131  |  Acc Test = 96.46%  |  Best Acc Test = 96.46%
+Fri 18 Jul 2025 13:13:26 INFO =====> Epoch 192 : Loss Train = 0.188  |  Acc Train = 94.38%
+Fri 18 Jul 2025 13:13:26 INFO Loss Valid = 0.132  |  Acc Valid = 96.66%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:13:26 INFO Loss Test = 0.134  |  Acc Test = 96.57%  |  Best Acc Test = 96.57%
+Fri 18 Jul 2025 13:14:36 INFO =====> Epoch 193 : Loss Train = 0.184  |  Acc Train = 94.51%
+Fri 18 Jul 2025 13:14:36 INFO Loss Valid = 0.126  |  Acc Valid = 96.68%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:14:36 INFO Loss Test = 0.130  |  Acc Test = 96.67%  |  Best Acc Test = 96.67%
+Fri 18 Jul 2025 13:15:47 INFO =====> Epoch 194 : Loss Train = 0.184  |  Acc Train = 94.51%
+Fri 18 Jul 2025 13:15:47 INFO Loss Valid = 0.129  |  Acc Valid = 96.69%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:15:47 INFO Loss Test = 0.132  |  Acc Test = 96.61%  |  Best Acc Test = 96.67%
+Fri 18 Jul 2025 13:16:59 INFO =====> Epoch 195 : Loss Train = 0.182  |  Acc Train = 94.57%
+Fri 18 Jul 2025 13:16:59 INFO Loss Valid = 0.128  |  Acc Valid = 96.70%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:16:59 INFO Loss Test = 0.129  |  Acc Test = 96.49%  |  Best Acc Test = 96.67%
+Fri 18 Jul 2025 13:18:17 INFO =====> Epoch 196 : Loss Train = 0.182  |  Acc Train = 94.54%
+Fri 18 Jul 2025 13:18:17 INFO Loss Valid = 0.128  |  Acc Valid = 96.61%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:18:17 INFO Loss Test = 0.131  |  Acc Test = 96.52%  |  Best Acc Test = 96.67%
+Fri 18 Jul 2025 13:19:36 INFO =====> Epoch 197 : Loss Train = 0.183  |  Acc Train = 94.55%
+Fri 18 Jul 2025 13:19:36 INFO Loss Valid = 0.133  |  Acc Valid = 96.50%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:19:36 INFO Loss Test = 0.138  |  Acc Test = 96.29%  |  Best Acc Test = 96.67%
+Fri 18 Jul 2025 13:20:57 INFO =====> Epoch 198 : Loss Train = 0.186  |  Acc Train = 94.40%
+Fri 18 Jul 2025 13:20:57 INFO Loss Valid = 0.134  |  Acc Valid = 96.51%  |  Best Acc Valid = 96.72%
+Fri 18 Jul 2025 13:20:57 INFO Loss Test = 0.128  |  Acc Test = 96.67%  |  Best Acc Test = 96.67%
+Fri 18 Jul 2025 13:22:18 INFO =====> Epoch 199 : Loss Train = 0.185  |  Acc Train = 94.47%
+Fri 18 Jul 2025 13:22:18 INFO Loss Valid = 0.124  |  Acc Valid = 96.75%  |  Best Acc Valid = 96.75%
+Fri 18 Jul 2025 13:22:18 INFO Loss Test = 0.128  |  Acc Test = 96.69%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:23:38 INFO =====> Epoch 200 : Loss Train = 0.185  |  Acc Train = 94.52%
+Fri 18 Jul 2025 13:23:38 INFO Loss Valid = 0.134  |  Acc Valid = 96.54%  |  Best Acc Valid = 96.75%
+Fri 18 Jul 2025 13:23:38 INFO Loss Test = 0.131  |  Acc Test = 96.53%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:25:09 INFO =====> Epoch 201 : Loss Train = 0.180  |  Acc Train = 94.59%
+Fri 18 Jul 2025 13:25:09 INFO Loss Valid = 0.126  |  Acc Valid = 96.70%  |  Best Acc Valid = 96.75%
+Fri 18 Jul 2025 13:25:09 INFO Loss Test = 0.130  |  Acc Test = 96.48%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:26:48 INFO =====> Epoch 202 : Loss Train = 0.185  |  Acc Train = 94.49%
+Fri 18 Jul 2025 13:26:48 INFO Loss Valid = 0.129  |  Acc Valid = 96.76%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:26:48 INFO Loss Test = 0.127  |  Acc Test = 96.59%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:28:36 INFO =====> Epoch 203 : Loss Train = 0.181  |  Acc Train = 94.63%
+Fri 18 Jul 2025 13:28:36 INFO Loss Valid = 0.129  |  Acc Valid = 96.60%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:28:36 INFO Loss Test = 0.128  |  Acc Test = 96.51%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:30:27 INFO =====> Epoch 204 : Loss Train = 0.183  |  Acc Train = 94.54%
+Fri 18 Jul 2025 13:30:27 INFO Loss Valid = 0.124  |  Acc Valid = 96.72%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:30:27 INFO Loss Test = 0.127  |  Acc Test = 96.55%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:32:15 INFO =====> Epoch 205 : Loss Train = 0.185  |  Acc Train = 94.51%
+Fri 18 Jul 2025 13:32:15 INFO Loss Valid = 0.128  |  Acc Valid = 96.73%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:32:15 INFO Loss Test = 0.133  |  Acc Test = 96.40%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:34:01 INFO =====> Epoch 206 : Loss Train = 0.183  |  Acc Train = 94.66%
+Fri 18 Jul 2025 13:34:01 INFO Loss Valid = 0.126  |  Acc Valid = 96.69%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:34:01 INFO Loss Test = 0.136  |  Acc Test = 96.39%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:35:49 INFO =====> Epoch 207 : Loss Train = 0.183  |  Acc Train = 94.56%
+Fri 18 Jul 2025 13:35:49 INFO Loss Valid = 0.126  |  Acc Valid = 96.64%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:35:49 INFO Loss Test = 0.129  |  Acc Test = 96.53%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:37:35 INFO =====> Epoch 208 : Loss Train = 0.181  |  Acc Train = 94.67%
+Fri 18 Jul 2025 13:37:35 INFO Loss Valid = 0.125  |  Acc Valid = 96.74%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:37:35 INFO Loss Test = 0.128  |  Acc Test = 96.41%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:39:20 INFO =====> Epoch 209 : Loss Train = 0.185  |  Acc Train = 94.47%
+Fri 18 Jul 2025 13:39:20 INFO Loss Valid = 0.132  |  Acc Valid = 96.71%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:39:20 INFO Loss Test = 0.132  |  Acc Test = 96.47%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:41:06 INFO =====> Epoch 210 : Loss Train = 0.189  |  Acc Train = 94.41%
+Fri 18 Jul 2025 13:41:06 INFO Loss Valid = 0.132  |  Acc Valid = 96.59%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:41:06 INFO Loss Test = 0.135  |  Acc Test = 96.40%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:42:56 INFO =====> Epoch 211 : Loss Train = 0.187  |  Acc Train = 94.39%
+Fri 18 Jul 2025 13:42:56 INFO Loss Valid = 0.132  |  Acc Valid = 96.60%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:42:56 INFO Loss Test = 0.138  |  Acc Test = 96.36%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:44:42 INFO =====> Epoch 212 : Loss Train = 0.192  |  Acc Train = 94.26%
+Fri 18 Jul 2025 13:44:42 INFO Loss Valid = 0.126  |  Acc Valid = 96.75%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:44:42 INFO Loss Test = 0.138  |  Acc Test = 96.29%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:46:30 INFO =====> Epoch 213 : Loss Train = 0.192  |  Acc Train = 94.30%
+Fri 18 Jul 2025 13:46:30 INFO Loss Valid = 0.141  |  Acc Valid = 96.53%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:46:30 INFO Loss Test = 0.133  |  Acc Test = 96.42%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:48:18 INFO =====> Epoch 214 : Loss Train = 0.190  |  Acc Train = 94.37%
+Fri 18 Jul 2025 13:48:18 INFO Loss Valid = 0.137  |  Acc Valid = 96.44%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:48:18 INFO Loss Test = 0.141  |  Acc Test = 96.33%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:50:06 INFO =====> Epoch 215 : Loss Train = 0.198  |  Acc Train = 94.12%
+Fri 18 Jul 2025 13:50:06 INFO Loss Valid = 0.146  |  Acc Valid = 96.21%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:50:06 INFO Loss Test = 0.139  |  Acc Test = 96.10%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:51:55 INFO =====> Epoch 216 : Loss Train = 0.201  |  Acc Train = 94.08%
+Fri 18 Jul 2025 13:51:55 INFO Loss Valid = 0.138  |  Acc Valid = 96.44%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:51:55 INFO Loss Test = 0.141  |  Acc Test = 96.29%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:53:44 INFO =====> Epoch 217 : Loss Train = 0.203  |  Acc Train = 93.96%
+Fri 18 Jul 2025 13:53:44 INFO Loss Valid = 0.136  |  Acc Valid = 96.39%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:53:44 INFO Loss Test = 0.141  |  Acc Test = 96.36%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:55:32 INFO =====> Epoch 218 : Loss Train = 0.206  |  Acc Train = 93.81%
+Fri 18 Jul 2025 13:55:32 INFO Loss Valid = 0.138  |  Acc Valid = 96.43%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:55:32 INFO Loss Test = 0.145  |  Acc Test = 96.01%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:57:17 INFO =====> Epoch 219 : Loss Train = 0.212  |  Acc Train = 93.75%
+Fri 18 Jul 2025 13:57:17 INFO Loss Valid = 0.156  |  Acc Valid = 95.93%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:57:17 INFO Loss Test = 0.155  |  Acc Test = 96.07%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 13:59:04 INFO =====> Epoch 220 : Loss Train = 0.212  |  Acc Train = 93.71%
+Fri 18 Jul 2025 13:59:04 INFO Loss Valid = 0.144  |  Acc Valid = 96.26%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 13:59:04 INFO Loss Test = 0.143  |  Acc Test = 96.24%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:00:52 INFO =====> Epoch 221 : Loss Train = 0.214  |  Acc Train = 93.65%
+Fri 18 Jul 2025 14:00:52 INFO Loss Valid = 0.144  |  Acc Valid = 96.41%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:00:52 INFO Loss Test = 0.152  |  Acc Test = 96.06%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:02:40 INFO =====> Epoch 222 : Loss Train = 0.226  |  Acc Train = 93.40%
+Fri 18 Jul 2025 14:02:40 INFO Loss Valid = 0.127  |  Acc Valid = 96.66%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:02:40 INFO Loss Test = 0.144  |  Acc Test = 96.08%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:04:28 INFO =====> Epoch 223 : Loss Train = 0.224  |  Acc Train = 93.42%
+Fri 18 Jul 2025 14:04:28 INFO Loss Valid = 0.154  |  Acc Valid = 96.01%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:04:28 INFO Loss Test = 0.151  |  Acc Test = 96.19%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:06:17 INFO =====> Epoch 224 : Loss Train = 0.227  |  Acc Train = 93.23%
+Fri 18 Jul 2025 14:06:17 INFO Loss Valid = 0.154  |  Acc Valid = 96.07%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:06:17 INFO Loss Test = 0.157  |  Acc Test = 95.98%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:08:06 INFO =====> Epoch 225 : Loss Train = 0.236  |  Acc Train = 93.08%
+Fri 18 Jul 2025 14:08:06 INFO Loss Valid = 0.142  |  Acc Valid = 96.41%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:08:06 INFO Loss Test = 0.149  |  Acc Test = 96.12%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:09:55 INFO =====> Epoch 226 : Loss Train = 0.231  |  Acc Train = 93.18%
+Fri 18 Jul 2025 14:09:55 INFO Loss Valid = 0.155  |  Acc Valid = 95.92%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:09:55 INFO Loss Test = 0.166  |  Acc Test = 95.76%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:11:45 INFO =====> Epoch 227 : Loss Train = 0.240  |  Acc Train = 92.91%
+Fri 18 Jul 2025 14:11:45 INFO Loss Valid = 0.160  |  Acc Valid = 96.10%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:11:45 INFO Loss Test = 0.162  |  Acc Test = 96.06%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:13:35 INFO =====> Epoch 228 : Loss Train = 0.247  |  Acc Train = 92.80%
+Fri 18 Jul 2025 14:13:35 INFO Loss Valid = 0.160  |  Acc Valid = 96.11%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:13:35 INFO Loss Test = 0.156  |  Acc Test = 96.11%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:15:26 INFO =====> Epoch 229 : Loss Train = 0.246  |  Acc Train = 92.78%
+Fri 18 Jul 2025 14:15:26 INFO Loss Valid = 0.158  |  Acc Valid = 95.95%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:15:26 INFO Loss Test = 0.162  |  Acc Test = 95.75%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:17:27 INFO =====> Epoch 230 : Loss Train = 0.252  |  Acc Train = 92.61%
+Fri 18 Jul 2025 14:17:27 INFO Loss Valid = 0.152  |  Acc Valid = 96.15%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:17:27 INFO Loss Test = 0.165  |  Acc Test = 95.77%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:19:46 INFO =====> Epoch 231 : Loss Train = 0.257  |  Acc Train = 92.47%
+Fri 18 Jul 2025 14:19:46 INFO Loss Valid = 0.157  |  Acc Valid = 95.99%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:19:46 INFO Loss Test = 0.165  |  Acc Test = 95.74%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:22:09 INFO =====> Epoch 232 : Loss Train = 0.259  |  Acc Train = 92.52%
+Fri 18 Jul 2025 14:22:09 INFO Loss Valid = 0.155  |  Acc Valid = 96.04%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:22:09 INFO Loss Test = 0.151  |  Acc Test = 96.17%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:24:26 INFO =====> Epoch 233 : Loss Train = 0.252  |  Acc Train = 92.54%
+Fri 18 Jul 2025 14:24:26 INFO Loss Valid = 0.177  |  Acc Valid = 95.67%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:24:26 INFO Loss Test = 0.171  |  Acc Test = 95.59%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:26:45 INFO =====> Epoch 234 : Loss Train = 0.260  |  Acc Train = 92.34%
+Fri 18 Jul 2025 14:26:45 INFO Loss Valid = 0.142  |  Acc Valid = 96.24%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:26:45 INFO Loss Test = 0.162  |  Acc Test = 95.85%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:29:08 INFO =====> Epoch 235 : Loss Train = 0.262  |  Acc Train = 92.36%
+Fri 18 Jul 2025 14:29:08 INFO Loss Valid = 0.163  |  Acc Valid = 95.94%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:29:08 INFO Loss Test = 0.166  |  Acc Test = 95.86%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:31:24 INFO =====> Epoch 236 : Loss Train = 0.264  |  Acc Train = 92.32%
+Fri 18 Jul 2025 14:31:24 INFO Loss Valid = 0.153  |  Acc Valid = 96.04%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:31:24 INFO Loss Test = 0.163  |  Acc Test = 95.66%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:33:33 INFO =====> Epoch 237 : Loss Train = 0.258  |  Acc Train = 92.45%
+Fri 18 Jul 2025 14:33:33 INFO Loss Valid = 0.164  |  Acc Valid = 95.69%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:33:33 INFO Loss Test = 0.175  |  Acc Test = 95.41%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:35:44 INFO =====> Epoch 238 : Loss Train = 0.274  |  Acc Train = 92.05%
+Fri 18 Jul 2025 14:35:44 INFO Loss Valid = 0.169  |  Acc Valid = 95.97%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:35:44 INFO Loss Test = 0.163  |  Acc Test = 95.70%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:37:50 INFO =====> Epoch 239 : Loss Train = 0.266  |  Acc Train = 92.28%
+Fri 18 Jul 2025 14:37:50 INFO Loss Valid = 0.162  |  Acc Valid = 95.76%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:37:50 INFO Loss Test = 0.178  |  Acc Test = 95.32%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:39:59 INFO =====> Epoch 240 : Loss Train = 0.271  |  Acc Train = 92.16%
+Fri 18 Jul 2025 14:39:59 INFO Loss Valid = 0.153  |  Acc Valid = 96.07%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:39:59 INFO Loss Test = 0.166  |  Acc Test = 95.63%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:42:11 INFO =====> Epoch 241 : Loss Train = 0.270  |  Acc Train = 92.15%
+Fri 18 Jul 2025 14:42:11 INFO Loss Valid = 0.162  |  Acc Valid = 96.03%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:42:11 INFO Loss Test = 0.165  |  Acc Test = 95.61%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:44:22 INFO =====> Epoch 242 : Loss Train = 0.268  |  Acc Train = 92.14%
+Fri 18 Jul 2025 14:44:22 INFO Loss Valid = 0.165  |  Acc Valid = 95.93%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:44:22 INFO Loss Test = 0.170  |  Acc Test = 95.62%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:46:41 INFO =====> Epoch 243 : Loss Train = 0.261  |  Acc Train = 92.35%
+Fri 18 Jul 2025 14:46:41 INFO Loss Valid = 0.154  |  Acc Valid = 96.22%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:46:41 INFO Loss Test = 0.165  |  Acc Test = 95.69%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:48:59 INFO =====> Epoch 244 : Loss Train = 0.269  |  Acc Train = 92.12%
+Fri 18 Jul 2025 14:48:59 INFO Loss Valid = 0.180  |  Acc Valid = 95.63%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:48:59 INFO Loss Test = 0.165  |  Acc Test = 95.65%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:51:18 INFO =====> Epoch 245 : Loss Train = 0.258  |  Acc Train = 92.53%
+Fri 18 Jul 2025 14:51:18 INFO Loss Valid = 0.155  |  Acc Valid = 95.94%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:51:18 INFO Loss Test = 0.171  |  Acc Test = 95.72%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:53:34 INFO =====> Epoch 246 : Loss Train = 0.258  |  Acc Train = 92.52%
+Fri 18 Jul 2025 14:53:34 INFO Loss Valid = 0.154  |  Acc Valid = 96.14%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:53:34 INFO Loss Test = 0.162  |  Acc Test = 95.81%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:55:43 INFO =====> Epoch 247 : Loss Train = 0.260  |  Acc Train = 92.43%
+Fri 18 Jul 2025 14:55:43 INFO Loss Valid = 0.181  |  Acc Valid = 95.54%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:55:43 INFO Loss Test = 0.168  |  Acc Test = 95.59%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:57:51 INFO =====> Epoch 248 : Loss Train = 0.260  |  Acc Train = 92.31%
+Fri 18 Jul 2025 14:57:51 INFO Loss Valid = 0.148  |  Acc Valid = 96.25%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:57:51 INFO Loss Test = 0.150  |  Acc Test = 95.97%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 14:59:57 INFO =====> Epoch 249 : Loss Train = 0.249  |  Acc Train = 92.72%
+Fri 18 Jul 2025 14:59:57 INFO Loss Valid = 0.157  |  Acc Valid = 96.08%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 14:59:57 INFO Loss Test = 0.164  |  Acc Test = 95.83%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:02:03 INFO =====> Epoch 250 : Loss Train = 0.248  |  Acc Train = 92.76%
+Fri 18 Jul 2025 15:02:03 INFO Loss Valid = 0.160  |  Acc Valid = 96.06%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:02:03 INFO Loss Test = 0.157  |  Acc Test = 96.09%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:04:10 INFO =====> Epoch 251 : Loss Train = 0.250  |  Acc Train = 92.68%
+Fri 18 Jul 2025 15:04:10 INFO Loss Valid = 0.146  |  Acc Valid = 96.19%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:04:10 INFO Loss Test = 0.160  |  Acc Test = 95.85%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:06:18 INFO =====> Epoch 252 : Loss Train = 0.242  |  Acc Train = 92.97%
+Fri 18 Jul 2025 15:06:18 INFO Loss Valid = 0.159  |  Acc Valid = 95.93%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:06:18 INFO Loss Test = 0.170  |  Acc Test = 95.75%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:08:28 INFO =====> Epoch 253 : Loss Train = 0.232  |  Acc Train = 93.26%
+Fri 18 Jul 2025 15:08:28 INFO Loss Valid = 0.153  |  Acc Valid = 96.23%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:08:28 INFO Loss Test = 0.150  |  Acc Test = 96.18%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:10:37 INFO =====> Epoch 254 : Loss Train = 0.232  |  Acc Train = 93.25%
+Fri 18 Jul 2025 15:10:37 INFO Loss Valid = 0.161  |  Acc Valid = 96.06%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:10:37 INFO Loss Test = 0.159  |  Acc Test = 96.05%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:12:45 INFO =====> Epoch 255 : Loss Train = 0.228  |  Acc Train = 93.28%
+Fri 18 Jul 2025 15:12:45 INFO Loss Valid = 0.155  |  Acc Valid = 96.01%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:12:45 INFO Loss Test = 0.157  |  Acc Test = 96.08%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:14:53 INFO =====> Epoch 256 : Loss Train = 0.233  |  Acc Train = 93.24%
+Fri 18 Jul 2025 15:14:53 INFO Loss Valid = 0.148  |  Acc Valid = 96.21%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:14:53 INFO Loss Test = 0.150  |  Acc Test = 96.14%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:17:00 INFO =====> Epoch 257 : Loss Train = 0.228  |  Acc Train = 93.27%
+Fri 18 Jul 2025 15:17:00 INFO Loss Valid = 0.154  |  Acc Valid = 96.22%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:17:00 INFO Loss Test = 0.150  |  Acc Test = 96.25%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:19:07 INFO =====> Epoch 258 : Loss Train = 0.219  |  Acc Train = 93.58%
+Fri 18 Jul 2025 15:19:07 INFO Loss Valid = 0.148  |  Acc Valid = 96.25%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:19:07 INFO Loss Test = 0.149  |  Acc Test = 96.09%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:21:12 INFO =====> Epoch 259 : Loss Train = 0.218  |  Acc Train = 93.60%
+Fri 18 Jul 2025 15:21:12 INFO Loss Valid = 0.149  |  Acc Valid = 96.37%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:21:12 INFO Loss Test = 0.149  |  Acc Test = 96.24%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:23:21 INFO =====> Epoch 260 : Loss Train = 0.209  |  Acc Train = 93.78%
+Fri 18 Jul 2025 15:23:21 INFO Loss Valid = 0.146  |  Acc Valid = 96.20%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:23:21 INFO Loss Test = 0.147  |  Acc Test = 96.22%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:25:35 INFO =====> Epoch 261 : Loss Train = 0.209  |  Acc Train = 93.85%
+Fri 18 Jul 2025 15:25:35 INFO Loss Valid = 0.144  |  Acc Valid = 96.41%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:25:35 INFO Loss Test = 0.152  |  Acc Test = 96.16%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:27:49 INFO =====> Epoch 262 : Loss Train = 0.204  |  Acc Train = 94.00%
+Fri 18 Jul 2025 15:27:49 INFO Loss Valid = 0.143  |  Acc Valid = 96.41%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:27:49 INFO Loss Test = 0.141  |  Acc Test = 96.14%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:30:00 INFO =====> Epoch 263 : Loss Train = 0.195  |  Acc Train = 94.12%
+Fri 18 Jul 2025 15:30:00 INFO Loss Valid = 0.136  |  Acc Valid = 96.47%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:30:00 INFO Loss Test = 0.143  |  Acc Test = 96.29%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:32:09 INFO =====> Epoch 264 : Loss Train = 0.198  |  Acc Train = 94.14%
+Fri 18 Jul 2025 15:32:09 INFO Loss Valid = 0.133  |  Acc Valid = 96.59%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:32:09 INFO Loss Test = 0.139  |  Acc Test = 96.30%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:34:19 INFO =====> Epoch 265 : Loss Train = 0.197  |  Acc Train = 94.25%
+Fri 18 Jul 2025 15:34:19 INFO Loss Valid = 0.143  |  Acc Valid = 96.56%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:34:19 INFO Loss Test = 0.143  |  Acc Test = 96.39%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:36:27 INFO =====> Epoch 266 : Loss Train = 0.192  |  Acc Train = 94.27%
+Fri 18 Jul 2025 15:36:27 INFO Loss Valid = 0.138  |  Acc Valid = 96.53%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:36:27 INFO Loss Test = 0.132  |  Acc Test = 96.47%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:38:38 INFO =====> Epoch 267 : Loss Train = 0.188  |  Acc Train = 94.46%
+Fri 18 Jul 2025 15:38:38 INFO Loss Valid = 0.132  |  Acc Valid = 96.69%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:38:38 INFO Loss Test = 0.135  |  Acc Test = 96.40%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:40:47 INFO =====> Epoch 268 : Loss Train = 0.185  |  Acc Train = 94.55%
+Fri 18 Jul 2025 15:40:47 INFO Loss Valid = 0.137  |  Acc Valid = 96.72%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:40:47 INFO Loss Test = 0.138  |  Acc Test = 96.24%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:42:59 INFO =====> Epoch 269 : Loss Train = 0.180  |  Acc Train = 94.61%
+Fri 18 Jul 2025 15:42:59 INFO Loss Valid = 0.130  |  Acc Valid = 96.71%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:42:59 INFO Loss Test = 0.129  |  Acc Test = 96.49%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:45:07 INFO =====> Epoch 270 : Loss Train = 0.183  |  Acc Train = 94.53%
+Fri 18 Jul 2025 15:45:07 INFO Loss Valid = 0.131  |  Acc Valid = 96.70%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:45:07 INFO Loss Test = 0.129  |  Acc Test = 96.50%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:47:15 INFO =====> Epoch 271 : Loss Train = 0.177  |  Acc Train = 94.75%
+Fri 18 Jul 2025 15:47:15 INFO Loss Valid = 0.135  |  Acc Valid = 96.62%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:47:15 INFO Loss Test = 0.135  |  Acc Test = 96.52%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:49:22 INFO =====> Epoch 272 : Loss Train = 0.171  |  Acc Train = 94.88%
+Fri 18 Jul 2025 15:49:22 INFO Loss Valid = 0.133  |  Acc Valid = 96.65%  |  Best Acc Valid = 96.76%
+Fri 18 Jul 2025 15:49:22 INFO Loss Test = 0.130  |  Acc Test = 96.57%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:51:21 INFO =====> Epoch 273 : Loss Train = 0.174  |  Acc Train = 94.82%
+Fri 18 Jul 2025 15:51:21 INFO Loss Valid = 0.130  |  Acc Valid = 96.78%  |  Best Acc Valid = 96.78%
+Fri 18 Jul 2025 15:51:21 INFO Loss Test = 0.130  |  Acc Test = 96.64%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:53:16 INFO =====> Epoch 274 : Loss Train = 0.172  |  Acc Train = 94.83%
+Fri 18 Jul 2025 15:53:16 INFO Loss Valid = 0.127  |  Acc Valid = 96.80%  |  Best Acc Valid = 96.80%
+Fri 18 Jul 2025 15:53:16 INFO Loss Test = 0.133  |  Acc Test = 96.59%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:55:14 INFO =====> Epoch 275 : Loss Train = 0.170  |  Acc Train = 94.96%
+Fri 18 Jul 2025 15:55:14 INFO Loss Valid = 0.134  |  Acc Valid = 96.59%  |  Best Acc Valid = 96.80%
+Fri 18 Jul 2025 15:55:14 INFO Loss Test = 0.131  |  Acc Test = 96.44%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:57:10 INFO =====> Epoch 276 : Loss Train = 0.167  |  Acc Train = 95.07%
+Fri 18 Jul 2025 15:57:10 INFO Loss Valid = 0.124  |  Acc Valid = 96.91%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 15:57:10 INFO Loss Test = 0.126  |  Acc Test = 96.52%  |  Best Acc Test = 96.69%
+Fri 18 Jul 2025 15:59:06 INFO =====> Epoch 277 : Loss Train = 0.168  |  Acc Train = 95.04%
+Fri 18 Jul 2025 15:59:06 INFO Loss Valid = 0.124  |  Acc Valid = 96.86%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 15:59:06 INFO Loss Test = 0.125  |  Acc Test = 96.71%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:01:08 INFO =====> Epoch 278 : Loss Train = 0.169  |  Acc Train = 95.00%
+Fri 18 Jul 2025 16:01:08 INFO Loss Valid = 0.133  |  Acc Valid = 96.78%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:01:08 INFO Loss Test = 0.129  |  Acc Test = 96.51%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:03:06 INFO =====> Epoch 279 : Loss Train = 0.167  |  Acc Train = 95.05%
+Fri 18 Jul 2025 16:03:06 INFO Loss Valid = 0.127  |  Acc Valid = 96.71%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:03:06 INFO Loss Test = 0.125  |  Acc Test = 96.61%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:05:07 INFO =====> Epoch 280 : Loss Train = 0.167  |  Acc Train = 95.00%
+Fri 18 Jul 2025 16:05:07 INFO Loss Valid = 0.130  |  Acc Valid = 96.75%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:05:07 INFO Loss Test = 0.131  |  Acc Test = 96.57%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:07:03 INFO =====> Epoch 281 : Loss Train = 0.170  |  Acc Train = 94.97%
+Fri 18 Jul 2025 16:07:03 INFO Loss Valid = 0.133  |  Acc Valid = 96.80%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:07:03 INFO Loss Test = 0.130  |  Acc Test = 96.61%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:09:03 INFO =====> Epoch 282 : Loss Train = 0.168  |  Acc Train = 95.00%
+Fri 18 Jul 2025 16:09:03 INFO Loss Valid = 0.128  |  Acc Valid = 96.78%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:09:03 INFO Loss Test = 0.128  |  Acc Test = 96.67%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:10:43 INFO =====> Epoch 283 : Loss Train = 0.169  |  Acc Train = 94.91%
+Fri 18 Jul 2025 16:10:43 INFO Loss Valid = 0.128  |  Acc Valid = 96.80%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:10:43 INFO Loss Test = 0.129  |  Acc Test = 96.50%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:12:20 INFO =====> Epoch 284 : Loss Train = 0.166  |  Acc Train = 94.98%
+Fri 18 Jul 2025 16:12:20 INFO Loss Valid = 0.131  |  Acc Valid = 96.68%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:12:20 INFO Loss Test = 0.134  |  Acc Test = 96.51%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:13:57 INFO =====> Epoch 285 : Loss Train = 0.172  |  Acc Train = 94.87%
+Fri 18 Jul 2025 16:13:57 INFO Loss Valid = 0.128  |  Acc Valid = 96.69%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:13:57 INFO Loss Test = 0.128  |  Acc Test = 96.57%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:15:33 INFO =====> Epoch 286 : Loss Train = 0.166  |  Acc Train = 95.01%
+Fri 18 Jul 2025 16:15:33 INFO Loss Valid = 0.131  |  Acc Valid = 96.83%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:15:33 INFO Loss Test = 0.130  |  Acc Test = 96.65%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:17:11 INFO =====> Epoch 287 : Loss Train = 0.173  |  Acc Train = 94.81%
+Fri 18 Jul 2025 16:17:11 INFO Loss Valid = 0.134  |  Acc Valid = 96.53%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:17:11 INFO Loss Test = 0.137  |  Acc Test = 96.43%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:18:40 INFO =====> Epoch 288 : Loss Train = 0.172  |  Acc Train = 94.80%
+Fri 18 Jul 2025 16:18:40 INFO Loss Valid = 0.130  |  Acc Valid = 96.71%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:18:40 INFO Loss Test = 0.130  |  Acc Test = 96.49%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:20:09 INFO =====> Epoch 289 : Loss Train = 0.173  |  Acc Train = 94.95%
+Fri 18 Jul 2025 16:20:09 INFO Loss Valid = 0.128  |  Acc Valid = 96.79%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:20:09 INFO Loss Test = 0.130  |  Acc Test = 96.49%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:21:37 INFO =====> Epoch 290 : Loss Train = 0.174  |  Acc Train = 94.76%
+Fri 18 Jul 2025 16:21:37 INFO Loss Valid = 0.130  |  Acc Valid = 96.71%  |  Best Acc Valid = 96.91%
+Fri 18 Jul 2025 16:21:37 INFO Loss Test = 0.142  |  Acc Test = 96.29%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:23:07 INFO =====> Epoch 291 : Loss Train = 0.175  |  Acc Train = 94.75%
+Fri 18 Jul 2025 16:23:07 INFO Loss Valid = 0.124  |  Acc Valid = 96.93%  |  Best Acc Valid = 96.93%
+Fri 18 Jul 2025 16:23:07 INFO Loss Test = 0.132  |  Acc Test = 96.61%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:24:35 INFO =====> Epoch 292 : Loss Train = 0.175  |  Acc Train = 94.80%
+Fri 18 Jul 2025 16:24:35 INFO Loss Valid = 0.133  |  Acc Valid = 96.76%  |  Best Acc Valid = 96.93%
+Fri 18 Jul 2025 16:24:35 INFO Loss Test = 0.133  |  Acc Test = 96.47%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:26:06 INFO =====> Epoch 293 : Loss Train = 0.178  |  Acc Train = 94.68%
+Fri 18 Jul 2025 16:26:06 INFO Loss Valid = 0.135  |  Acc Valid = 96.54%  |  Best Acc Valid = 96.93%
+Fri 18 Jul 2025 16:26:06 INFO Loss Test = 0.139  |  Acc Test = 96.32%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:27:35 INFO =====> Epoch 294 : Loss Train = 0.185  |  Acc Train = 94.55%
+Fri 18 Jul 2025 16:27:35 INFO Loss Valid = 0.139  |  Acc Valid = 96.47%  |  Best Acc Valid = 96.93%
+Fri 18 Jul 2025 16:27:35 INFO Loss Test = 0.137  |  Acc Test = 96.35%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:29:04 INFO =====> Epoch 295 : Loss Train = 0.181  |  Acc Train = 94.59%
+Fri 18 Jul 2025 16:29:04 INFO Loss Valid = 0.135  |  Acc Valid = 96.58%  |  Best Acc Valid = 96.93%
+Fri 18 Jul 2025 16:29:04 INFO Loss Test = 0.138  |  Acc Test = 96.47%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:30:34 INFO =====> Epoch 296 : Loss Train = 0.182  |  Acc Train = 94.58%
+Fri 18 Jul 2025 16:30:34 INFO Loss Valid = 0.134  |  Acc Valid = 96.56%  |  Best Acc Valid = 96.93%
+Fri 18 Jul 2025 16:30:34 INFO Loss Test = 0.144  |  Acc Test = 96.34%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:32:03 INFO =====> Epoch 297 : Loss Train = 0.187  |  Acc Train = 94.48%
+Fri 18 Jul 2025 16:32:03 INFO Loss Valid = 0.137  |  Acc Valid = 96.61%  |  Best Acc Valid = 96.93%
+Fri 18 Jul 2025 16:32:03 INFO Loss Test = 0.141  |  Acc Test = 96.31%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:33:31 INFO =====> Epoch 298 : Loss Train = 0.191  |  Acc Train = 94.36%
+Fri 18 Jul 2025 16:33:31 INFO Loss Valid = 0.139  |  Acc Valid = 96.53%  |  Best Acc Valid = 96.93%
+Fri 18 Jul 2025 16:33:31 INFO Loss Test = 0.138  |  Acc Test = 96.40%  |  Best Acc Test = 96.71%
+Fri 18 Jul 2025 16:35:00 INFO =====> Epoch 299 : Loss Train = 0.189  |  Acc Train = 94.31%
+Fri 18 Jul 2025 16:35:00 INFO Loss Valid = 0.137  |  Acc Valid = 96.62%  |  Best Acc Valid = 96.93%
+Fri 18 Jul 2025 16:35:00 INFO Loss Test = 0.149  |  Acc Test = 96.34%  |  Best Acc Test = 96.71%

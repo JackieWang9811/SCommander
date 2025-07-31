@@ -17,34 +17,19 @@ class Config:
 
     seed = 312  # 312 42 3407 0 10086 114514+-5 3112
     gpu = 1
-    model_type = 'spike-temporal-former'
-    block_type = 'sequeezeformer'  # 'sequeezeformer'
+    model_type = 'spikcommander'
+    block_type = 'mstasa'
 
     distribute = False
 
     spike_mode = "lif"
-    # time_step: 1,2,5,10s
-    # Learning delays: time_step = 10, n_bins= 5
     depths = 1
-    time_step = 10 # 100 time steps, time_step_list = [100,50,25,20,5,4]
-    time_step_list = [4] # time steps: 10=> 20=> 40=>50=>100=> 200=> 250  100, 50, 25, 20,
-    # time_step_list = [20, 25, 50, 100] # time steps: 10=> 20=> 40=>50=>100=> 200=> 250  100, 50, 25, 20,
-    n_bins = 5 # 正常是5 => 700//5 = 140; 10 => 700//10 = 70
+    time_step = 10
+    n_bins = 5
     n_warmup  = 10
     epochs = 300
     attention_window = 20
-    attention_window_list = [8]
-    # attention_window_list = [8, 12, 16]
-    # attention_window_list = [24, 28, 32]
 
-    # batch_size = 128 if time_step ==2 else 256 # 64=> 72=> 96=> 128 => 196 => 224 => 256 => 512
-    # if time_step == 1 and depths==1:
-    #     batch_size = 96
-    # elif time_step == 1 and depths==2:
-    #     batch_size = 48
-    # elif time_step == 2 and depths == 2:
-    #     batch_size = 240
-    # else:
     batch_size = 256
     # dropout_l control the first layer
     dropout_l = 0.1
@@ -58,75 +43,34 @@ class Config:
     ############################
     #        USE Module        #
     ############################
-    # 控制不同模块间是否使用BN
-    use_norm = False
-    # 控制每个模块的第一个输入是否过一个LN
-    use_ln = False
-    # 控制每个block最后一个输入是否是一个scale
-    use_adaptive_scale = True
-    # 控制首尾是否加入残差
-    use_identity = False
-    # 控制每个module之间是否使用LIF
-    use_lif = False
-    # MLP和Attention中是否要使用BN
     use_bn = True
-    # 是否使用CutMix数据增强
     use_aug = True
-    # 是否使用dropout
     use_dp = True
-    # 是否使用DW的bias
     use_dw_bias = False
 
-    use_global = False
-    use_local = True
 
 
     ############################
     #          Augment         #
     ############################
     #    TimeNeurons_mask Aug  #
-    TN_mask_aug_proba = 0.5   # 0.15
+    TN_mask_aug_proba = 0.5
     time_mask_proportion = 0.1
-    # time_mask_size = 10   # 10
-    neuron_mask_size= 10  # 10
-
-    #      CutMix Aug           #
-    cutmix_aug_proba = 0.1
-    cut_size_proba = 0.1
-
-    #      TimeJitter Aug       #
-    time_jitter_proba = 0.05
-    max_jitter = 5
-
-    #     NeuronJitter Aug      #
-    channel_jitter_proba = 0.05
-
-    #       DropEvent Aug       #
-    drop_event_proba = 0.05
-    max_drop_events = 10
-
-    #         Noise Aug         #
-    noise_proba = 0.1
-    sig = 1.5
+    neuron_mask_size= 10
 
     backend = 'cupy'
     attn_mode = 'v2'
     kernel_size = 31  # 卷积核为255时，92.42% 255=>127=>63=>31,
     bias = True
 
-    # weight_decay = 1e-5
     t_max = 40
     lr_w = 0.005
     weight_decay = 0.01 # Default 1e-2 => 5e-4
     n_inputs = 700//n_bins
     n_hidden_neurons_list = [256] # [128, 144, 160, 176, 192, 208, 224, 240, 256]
-    n_hidden_neurons = 144
     n_outputs = 20 if dataset == 'shd' else 35
-    hidden_dims = mlp_ratio*n_hidden_neurons # 可以试一下768
 
     num_heads = 16  # 4=> 8=> 16 不增添加网络参数
-    # spike_mode_list = ['lif', 'plif']
-
     loss = 'sum'           # 'mean', 'max', 'spike_count', 'sum'
     loss_fn = 'CEloss' # 'SmoothCEloss', 'CEloss'
 
