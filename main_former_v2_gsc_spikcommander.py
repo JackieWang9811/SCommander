@@ -291,80 +291,79 @@ if __name__ == '__main__':
     augs = SpecAugment(config)
 
     for hidden_dim in config.n_hidden_neurons_list:
-        for attention_window in config.attention_window_list:
-            ''' set random seeds '''
-            seed_val = config.seed
-            np.random.seed(seed_val)
-            torch.manual_seed(seed_val)
-            torch.cuda.manual_seed_all(seed_val)
-            torch.backends.cudnn.deterministic = True
-            torch.backends.cudnn.benchmark = False
+        ''' set random seeds '''
+        seed_val = config.seed
+        np.random.seed(seed_val)
+        torch.manual_seed(seed_val)
+        torch.cuda.manual_seed_all(seed_val)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
 
-            config.attention_window = attention_window
+        config.attention_window = attention_window
 
-            # cp.random.seed(seed_val)
-            logger.info("##############################################\n")
-            logger.info("Seed :{}".format(seed_val))
-            epochs = config.epochs
-            logger.info("The epoch is: {}".format(epochs))
-            logger.info("The batch size is : {}".format(config.batch_size))
-            logger.info("The backend is: {}".format(config.backend))
-            logger.info("The num_heads is: {}".format(config.num_heads))
-            logger.info("The attn_window_size is: {}".format(config.attention_window))
+        # cp.random.seed(seed_val)
+        logger.info("##############################################\n")
+        logger.info("Seed :{}".format(seed_val))
+        epochs = config.epochs
+        logger.info("The epoch is: {}".format(epochs))
+        logger.info("The batch size is : {}".format(config.batch_size))
+        logger.info("The backend is: {}".format(config.backend))
+        logger.info("The num_heads is: {}".format(config.num_heads))
+        logger.info("The attn_window_size is: {}".format(config.attention_window))
 
-            """ dataset """
-            if config.dataset == 'shd':
-                train_loader, valid_loader = SHD_dataloaders(config)
-                test_loader = None
-            elif config.dataset == 'ssc':
-                train_loader, valid_loader, test_loader = SSC_dataloaders(config)
-            elif config.dataset == 'gsc':
-                train_loader, valid_loader, test_loader = GSC_dataloaders(config)
-            else:
-                raise Exception(f'dataset {config.dataset} not implemented')
+        """ dataset """
+        if config.dataset == 'shd':
+            train_loader, valid_loader = SHD_dataloaders(config)
+            test_loader = None
+        elif config.dataset == 'ssc':
+            train_loader, valid_loader, test_loader = SSC_dataloaders(config)
+        elif config.dataset == 'gsc':
+            train_loader, valid_loader, test_loader = GSC_dataloaders(config)
+        else:
+            raise Exception(f'dataset {config.dataset} not implemented')
 
-            config.n_hidden_neurons = hidden_dim
-            config.hidden_dims = 4*hidden_dim
+        config.n_hidden_neurons = hidden_dim
+        config.hidden_dims = 4*hidden_dim
 
-            if config.use_aug:
-                logger.info("The mF is: {}".format(config.mF))
-                logger.info("The F is: {}".format(config.F))
-                logger.info("The mT is: {}".format(config.mT))
-                logger.info("The pS is: {}".format(config.pS))
+        if config.use_aug:
+            logger.info("The mF is: {}".format(config.mF))
+            logger.info("The F is: {}".format(config.F))
+            logger.info("The mT is: {}".format(config.mT))
+            logger.info("The pS is: {}".format(config.pS))
 
-            else:
-                logger.info("The augs is None")
+        else:
+            logger.info("The augs is None")
 
-            logger.info("The window_size is {}".format(config.window_size))
-            logger.info("The hop_length is {}".format(config.hop_length))
-            logger.info("The n_mels is {}".format(config.n_mels))
-            logger.info("The hidden_dim is: {}".format(hidden_dim))
-            logger.info("The spike_mode is: {}".format(config.spike_mode))
-            logger.info("The block_mode is :{}".format(config.block_type))
-            logger.info("The gate_v_threshold is: {}".format(config.gate_v_threshold))
-            model = SpikCommander(config).to(device)
+        logger.info("The window_size is {}".format(config.window_size))
+        logger.info("The hop_length is {}".format(config.hop_length))
+        logger.info("The n_mels is {}".format(config.n_mels))
+        logger.info("The hidden_dim is: {}".format(hidden_dim))
+        logger.info("The spike_mode is: {}".format(config.spike_mode))
+        logger.info("The block_mode is :{}".format(config.block_type))
+        logger.info("The gate_v_threshold is: {}".format(config.gate_v_threshold))
+        model = SpikCommander(config).to(device)
 
-            now = datetime.now()
-            formatted_time = now.strftime("%Y%m%d_%H%M%S")
-            dataset_info = config.dataset
-            folder_path = os.path.join('model_structure', dataset_info)
-            os.makedirs(folder_path, exist_ok=True)
-            filename = os.path.join(folder_path, f'model_structure_{dataset_info}_{formatted_time}.txt')
+        now = datetime.now()
+        formatted_time = now.strftime("%Y%m%d_%H%M%S")
+        dataset_info = config.dataset
+        folder_path = os.path.join('model_structure', dataset_info)
+        os.makedirs(folder_path, exist_ok=True)
+        filename = os.path.join(folder_path, f'model_structure_{dataset_info}_{formatted_time}.txt')
 
-            with open(filename, 'w') as f:
-                print(model, file=f)
+        with open(filename, 'w') as f:
+            print(model, file=f)
 
-            print(f"===> Dataset    = {config.dataset}")
-            print(f"===> Model type = {config.model_type}")
-            print(f"===> Model size = {utils.count_parameters(model)}\n\n")
-            logger.info("Model size:{}".format(utils.count_parameters(model)))
-            lr_w = config.lr_w
-            logger.info("lr_w: {}".format(lr_w))
-            weight_decay = config.weight_decay
-            logger.info("weight_decay: {}".format(weight_decay))
-            optimizer = build_optimizer(config, model)
-            T = config.t_max
-            logger.info("T:{}".format(T))
-            cosine_scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=T)
+        print(f"===> Dataset    = {config.dataset}")
+        print(f"===> Model type = {config.model_type}")
+        print(f"===> Model size = {utils.count_parameters(model)}\n\n")
+        logger.info("Model size:{}".format(utils.count_parameters(model)))
+        lr_w = config.lr_w
+        logger.info("lr_w: {}".format(lr_w))
+        weight_decay = config.weight_decay
+        logger.info("weight_decay: {}".format(weight_decay))
+        optimizer = build_optimizer(config, model)
+        T = config.t_max
+        logger.info("T:{}".format(T))
+        cosine_scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=T)
 
-            train_model(config, train_loader, valid_loader, test_loader, device, model, optimizer, cosine_scheduler, epochs)
+        train_model(config, train_loader, valid_loader, test_loader, device, model, optimizer, cosine_scheduler, epochs)

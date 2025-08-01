@@ -1,5 +1,4 @@
 from datasets import SHD_dataloaders, SSC_dataloaders, GSC_dataloaders
-# from config import Config
 from best_config_GSC_former import Config as GSCTConfig
 from best_config_SSC_former import Config as SSCTConfig
 from best_config_SHD_former import Config as SHDTConfig
@@ -47,24 +46,15 @@ def calc_loss(config, output, y):
 
         CEloss = nn.CrossEntropyLoss()
         loss = CEloss(m, y)
-        # log_softmax_fn = nn.LogSoftmax(dim=1)
-        # loss_fn = nn.NLLLoss()
-        # log_p_y = log_softmax_fn(m)
-        # loss = loss_fn(log_p_y, y)
 
         return loss
 
 def calc_loss_nonspike(config, output, y):
     # probably better to add it in init, or in general do it one time only
     if config.loss_fn == 'CEloss':
-        # compare using this to directly using nn.CrossEntropyLoss
 
         CEloss = nn.CrossEntropyLoss()
         loss = CEloss(output, y)
-        # log_softmax_fn = nn.LogSoftmax(dim=1)
-        # loss_fn = nn.NLLLoss()
-        # log_p_y = log_softmax_fn(m)
-        # loss = loss_fn(log_p_y, y)
 
         return loss
 
@@ -85,34 +75,20 @@ def calc_metric(config, output, y):
 def eval_model(config, model, loader, device):
     ##################################    Eval Loop    #########################
     model.eval()
-    # calc_loss_std = SoftTargetCrossEntropy()
+
     with torch.no_grad():
         loss_batch, metric_batch = [], []
         for i, (x, y, x_len) in enumerate(tqdm(loader)):
-            # x for shd and ssc is: (batch, time, neurons)
-            # x={Tensor:(256, 101,,140)}
+
             attention_mask = padded_sequence_mask(x_len)
             attention_mask = attention_mask.transpose(0,1).to(device)
             y = F.one_hot(y, config.n_outputs).float()
-            if config.use_padding:
-                current_time = x.size(1)
-                target_time = config.max_len
-
-                # 计算需要填充的时间步数
-                padding_needed = max(0, target_time - current_time)  # 如果当前时间步长超过目标，则不需要填充
-
-                padding = (0, 0, 0, padding_needed)
-
-                # 应用填充
-                x = F.pad(x, padding, 'constant', 0)
             x = x.float().to(device)
             y = y.to(device)
 
             output = model(x,attention_mask)
 
             loss = calc_loss(config, output, y)
-            # loss = calc_loss_nonspike(config, output, y)
-            # loss = calc_loss_std(output,y)
             metric = calc_metric(config, output, y)
 
             loss_batch.append(loss.detach().cpu().item())
@@ -136,7 +112,6 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
     best_metric_val = 0  # 1e6
     best_metric_test = 0  # 1e6
     best_loss_val = 1e6
-    # calc_loss_std = SoftTargetCrossEntropy()
 
     for epoch in range(num_epochs):
 
@@ -144,11 +119,7 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
         model.train()
         # last element in the tuple corresponds to the collate_fn return
         loss_batch, metric_batch = [], []
-        # max_t = 0
-        # pre_pos = pre_pos_epoch.copy()
         for i, (x, y, x_len) in enumerate(tqdm(train_loader)):
-            # x for shd and ssc is: (batch, time, neurons)
-            # x={Tensor:(256, 101,,140)}
             attention_mask = padded_sequence_mask(x_len)
             attention_mask = attention_mask.transpose(0,1).to(device)
 
@@ -190,24 +161,11 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
                 attention_mask = attention_mask.transpose(0, 1).to(device)
 
                 y = F.one_hot(y, config.n_outputs).float()
-                if config.use_padding:
-                    current_time = x.size(1)
-                    target_time = config.max_len
-
-                    # 计算需要填充的时间步数
-                    padding_needed = max(0, target_time - current_time)  # 如果当前时间步长超过目标，则不需要填充
-
-                    padding = (0, 0, 0, padding_needed)
-
-                    # 应用填充
-                    x = F.pad(x, padding, 'constant', 0)
                 x = x.float().to(device)
                 y = y.to(device)
 
                 output = model(x,attention_mask)
-                # loss = calc_loss_std(output, y)
                 loss = calc_loss(config, output, y)
-                # loss = calc_loss_nonspike(config, output, y)
                 metric = calc_metric(config, output, y)
 
                 loss_batch.append(loss.detach().cpu().item())
@@ -265,28 +223,20 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
     valid_acc = [x * 100 for x in metric_epochs['valid']]
     test_acc = [x * 100 for x in metric_epochs['test']]
 
-    # 获取epoch数
     epochs = range(1, len(train_acc) + 1)
     if config.make_plot:
-        # 创建绘图
         plt.figure(figsize=(10, 5))
         plt.plot(epochs, train_acc, '-o', label='Training Accuracy', color='g')
         plt.plot(epochs, valid_acc, '-^', label='Validation Accuracy', color='b')
         plt.plot(epochs, test_acc, '-s', label='Test Accuracy', color='y')
 
-        # 添加标题和标签
         plt.title('Training, Validation, and Test Accuracy')
         plt.xlabel('Epochs')
         plt.ylabel('Accuracy (%)')
         plt.legend()
 
-        # 设置y轴的显示格式
         plt.gca().yaxis.set_major_formatter(plt.FormatStrFormatter('%.2f%%'))
-
-        # 获取当前时间，格式化为字符串
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-
-        # 显示图表
         plt.savefig(f'Accuracy_{current_time}.png')
         plt.show()
 
@@ -321,78 +271,76 @@ if __name__ == '__main__':
     print(f"\n=====> Device = {device} \n\n")
 
     for hidden_dim in config.n_hidden_neurons_list:
-        # for time_step in config.time_step_list:
-        for attention_window in config.attention_window_list:
-            ''' set random seeds '''
-            seed_val = config.seed
-            np.random.seed(seed_val)
-            torch.manual_seed(seed_val)
-            torch.cuda.manual_seed_all(seed_val)
-            torch.backends.cudnn.deterministic = True
-            torch.backends.cudnn.benchmark = False
-            config.attention_window = attention_window
+        ''' set random seeds '''
+        seed_val = config.seed
+        np.random.seed(seed_val)
+        torch.manual_seed(seed_val)
+        torch.cuda.manual_seed_all(seed_val)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
+        config.attention_window = attention_window
 
 
-            logger.info("##############################################\n")
-            logger.info("Seed :{}".format(seed_val))
-            epochs = config.epochs
-            logger.info("The epoch is: {}".format(epochs))
-            logger.info("The batch size is : {}".format(config.batch_size))
-            logger.info("The backend is: {}".format(config.backend))
-            logger.info("The num_heads is: {}".format(config.num_heads))
-            logger.info("The attn_window_size is: {}".format(config.attention_window))
-            if config.use_aug:
-                logger.info("The TN_mask_aug_proba is: {}".format(config.TN_mask_aug_proba))
-                logger.info("The time_mask_proportion is: {}".format(config.time_mask_proportion))
-                logger.info("The neuron_mask_size is: {}".format(config.neuron_mask_size))
+        logger.info("##############################################\n")
+        logger.info("Seed :{}".format(seed_val))
+        epochs = config.epochs
+        logger.info("The epoch is: {}".format(epochs))
+        logger.info("The batch size is : {}".format(config.batch_size))
+        logger.info("The backend is: {}".format(config.backend))
+        logger.info("The num_heads is: {}".format(config.num_heads))
+        logger.info("The attn_window_size is: {}".format(config.attention_window))
+        if config.use_aug:
+            logger.info("The TN_mask_aug_proba is: {}".format(config.TN_mask_aug_proba))
+            logger.info("The time_mask_proportion is: {}".format(config.time_mask_proportion))
+            logger.info("The neuron_mask_size is: {}".format(config.neuron_mask_size))
 
-            else:
-                logger.info("The augs is None")
+        else:
+            logger.info("The augs is None")
 
 
-            """ dataset """
-            if config.dataset == 'shd':
-                train_loader, valid_loader = SHD_dataloaders(config)
-                test_loader = None
-            elif config.dataset == 'ssc':
-                train_loader, valid_loader, test_loader = SSC_dataloaders(config)
-            elif config.dataset == 'gsc':
-                train_loader, valid_loader, test_loader = GSC_dataloaders(config)
-            else:
-                raise Exception(f'dataset {config.dataset} not implemented')
+        """ dataset """
+        if config.dataset == 'shd':
+            train_loader, valid_loader = SHD_dataloaders(config)
+            test_loader = None
+        elif config.dataset == 'ssc':
+            train_loader, valid_loader, test_loader = SSC_dataloaders(config)
+        elif config.dataset == 'gsc':
+            train_loader, valid_loader, test_loader = GSC_dataloaders(config)
+        else:
+            raise Exception(f'dataset {config.dataset} not implemented')
 
-            config.n_hidden_neurons = hidden_dim
-            config.hidden_dims = 4 * hidden_dim
+        config.n_hidden_neurons = hidden_dim
+        config.hidden_dims = 4 * hidden_dim
 
-            logger.info("The time_step is: {}".format(config.time_step))
-            logger.info("The n_bins is: {}".format(config.n_bins))
-            logger.info("The hidden_dim is: {}".format(hidden_dim))
-            logger.info("The spike_mode is: {}".format(config.spike_mode))
-            logger.info("The block_mode is :{}".format(config.block_type))
-            logger.info("The gate_v_threshold is: {}".format(config.gate_v_threshold))
-            model = SpikCommander(config).to(device)
+        logger.info("The time_step is: {}".format(config.time_step))
+        logger.info("The n_bins is: {}".format(config.n_bins))
+        logger.info("The hidden_dim is: {}".format(hidden_dim))
+        logger.info("The spike_mode is: {}".format(config.spike_mode))
+        logger.info("The block_mode is :{}".format(config.block_type))
+        logger.info("The gate_v_threshold is: {}".format(config.gate_v_threshold))
+        model = SpikCommander(config).to(device)
 
-            now = datetime.now()
-            formatted_time = now.strftime("%Y%m%d_%H%M%S")
-            dataset_info = config.dataset
-            folder_path = os.path.join('model_structure', dataset_info)
-            os.makedirs(folder_path, exist_ok=True)
-            filename = os.path.join(folder_path, f'model_structure_{dataset_info}_{formatted_time}.txt')
+        now = datetime.now()
+        formatted_time = now.strftime("%Y%m%d_%H%M%S")
+        dataset_info = config.dataset
+        folder_path = os.path.join('model_structure', dataset_info)
+        os.makedirs(folder_path, exist_ok=True)
+        filename = os.path.join(folder_path, f'model_structure_{dataset_info}_{formatted_time}.txt')
 
-            with open(filename, 'w') as f:
-                print(model, file=f)
+        with open(filename, 'w') as f:
+            print(model, file=f)
 
-            print(f"===> Dataset    = {config.dataset}")
-            print(f"===> Model type = {config.model_type}")
-            print(f"===> Model size = {utils.count_parameters(model)}\n\n")
-            logger.info("Model size:{}".format(utils.count_parameters(model)))
-            lr_w = config.lr_w
-            logger.info("lr_w: {}".format(lr_w))
-            weight_decay = config.weight_decay
-            logger.info("weight_decay: {}".format(weight_decay))
-            optimizer = build_optimizer(config, model)
-            T = config.t_max
-            logger.info("T:{}".format(T))
-            scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=T)
+        print(f"===> Dataset    = {config.dataset}")
+        print(f"===> Model type = {config.model_type}")
+        print(f"===> Model size = {utils.count_parameters(model)}\n\n")
+        logger.info("Model size:{}".format(utils.count_parameters(model)))
+        lr_w = config.lr_w
+        logger.info("lr_w: {}".format(lr_w))
+        weight_decay = config.weight_decay
+        logger.info("weight_decay: {}".format(weight_decay))
+        optimizer = build_optimizer(config, model)
+        T = config.t_max
+        logger.info("T:{}".format(T))
+        scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=T)
 
-            train_model(config, train_loader, valid_loader, test_loader, device, model, optimizer, scheduler, epochs)
+        train_model(config, train_loader, valid_loader, test_loader, device, model, optimizer, scheduler, epochs)
