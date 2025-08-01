@@ -26,7 +26,6 @@ class SpikingEmbedv2p(nn.Module):
                                    step_mode='m')  # self.config.bias
 
         if self.config.use_bn:
-            # self.bn0 = layer.BatchNorm1d(config.n_hidden_neurons, step_mode='m')
             self.bn1 = layer.BatchNorm1d(config.n_hidden_neurons, step_mode='m')
             self.bn2 = layer.BatchNorm1d(config.n_hidden_neurons, step_mode='m')
 
@@ -88,11 +87,6 @@ class SpikingEmbedv2p(nn.Module):
         # batch, time, dim =>  batch, dim, time
         x = self.trans1(x)
         x = self.pwconv(x)
-        # # batch, dim, time =>  time, batch, dim
-        # x = self.trans2(x)
-        # if self.config.use_bn:
-        #     x = self.bn0(x)
-        # x = self.trans3(x)  # time, batch, dim => batch, dim, time
         x = self.dwconv(x)
         # batch, dim, time =>  time, batch, dim
         x = self.trans2(x)
