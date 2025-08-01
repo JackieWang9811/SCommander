@@ -1,4 +1,3 @@
-# from utils import set_seed
 
 import numpy as np
 from torch.utils.data import Subset
@@ -25,7 +24,6 @@ import random
 import requests
 import zipfile
 import pandas as pd
-# from pytorch_lightning import LightningDataModule
 from scipy.io import wavfile
 from torch.utils.data import DataLoader, Dataset, random_split
 from tqdm import tqdm
@@ -180,7 +178,7 @@ class TimeNeurons_mask_aug(object):
   def __call__(self, x, y):
 
     if np.random.uniform() < self.config.TN_mask_aug_proba:
-        mask_size = int(self.config.time_mask_proportion * x.shape[0])  # Use pS to determine the mask size proportionally
+        mask_size = int(self.config.time_mask_proportion * x.shape[0])
         ind = np.random.randint(0, x.shape[0] - mask_size)
         x[ind:ind + mask_size, :] = 0
 
@@ -199,8 +197,7 @@ class Augs(object):
 
     def __init__(self, config):
         self.config = config
-        self.augs = [TimeNeurons_mask_aug(config)] # ,TimeJitterAug(config)
-        # self.augs = [TimeNeurons_mask_aug(config)]
+        self.augs = [TimeNeurons_mask_aug(config)]
 
     def __call__(self, x, y):
         for aug in self.augs:
@@ -317,10 +314,6 @@ class BinnedSpikingHeidelbergDigits(SpikingHeidelbergDigits):
         if self.data_type == 'event':
             events = {'t': self.h5_file['spikes']['times'][i], 'x': self.h5_file['spikes']['units'][i]}
             label = self.h5_file['labels'][i]
-            # if self.transform is not None:
-            #     events = self.transform(events)
-            # if self.target_transform is not None:
-            #     label = self.target_transform(label)
             if self.transform is not None:
                 events, label = self.transform(events,label)
 
@@ -335,10 +328,6 @@ class BinnedSpikingHeidelbergDigits(SpikingHeidelbergDigits):
             for i in range(binned_len):
                 binned_frames[:,i] = frames[:, self.n_bins*i : self.n_bins*(i+1)].sum(axis=1)
 
-            # if self.transform is not None:
-            #     binned_frames = self.transform(binned_frames)
-            # if self.target_transform is not None:
-            #     label = self.target_transform(label)
             if self.transform is not None:
                 binned_frames, label = self.transform(binned_frames,label)
             return binned_frames, label
@@ -379,10 +368,7 @@ class BinnedSpikingSpeechCommands(SpikingSpeechCommands):
         if self.data_type == 'event':
             events = {'t': self.h5_file['spikes']['times'][i], 'x': self.h5_file['spikes']['units'][i]}
             label = self.h5_file['labels'][i]
-            # if self.transform is not None:
-            #     events = self.transform(events)
-            # if self.target_transform is not None:
-            #     label = self.target_transform(label)
+
             if self.transform is not None:
                 events, label = self.transform(events,label)
             print(label)
@@ -397,15 +383,9 @@ class BinnedSpikingSpeechCommands(SpikingSpeechCommands):
             for i in range(binned_len):
                 binned_frames[:,i] = frames[:, self.n_bins*i : self.n_bins*(i+1)].sum(axis=1)
 
-            # if self.transform is not None:
-            #     binned_frames = self.transform(binned_frames)
-            # if self.target_transform is not None:
-            #     label = self.target_transform(label)
             if self.transform is not None:
                 binned_frames, label = self.transform(binned_frames,label)
-            # label 为 0-34
-            # print(type(label)) # int
-            # print(label)
+
             return binned_frames, label
 
 
@@ -469,10 +449,8 @@ class GSpeechCommands(Dataset):
         if self.target_transform is not None:
             target = self.target_transform(target)
 
-        # number = torch.sum(waveform.ne(-100.0000))
         mask = waveform.ne(-100.0000)
-        valid_rows = mask.all(dim=1)  # 在频率维度上检查，确定没有一行完全是 -100.0000
-        # number = torch.sum(valid_rows)  # 计算不全为 -100.0000 的行数
+        valid_rows = mask.all(dim=1)
         number = len(valid_rows)
 
         # return waveform, target, torch.zeros(1)
