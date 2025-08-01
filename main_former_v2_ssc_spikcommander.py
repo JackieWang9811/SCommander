@@ -4,7 +4,7 @@ from best_config_GSC_former import Config as GSCTConfig
 from best_config_SSC_former import Config as SSCTConfig
 from best_config_SHD_former import Config as SHDTConfig
 
-from spikcommder import SpikeDrivenTransformer
+from spikcommder import SpikCommander
 from spikingjelly.datasets import padded_sequence_mask
 
 from snn_delays import SnnDelays
@@ -120,16 +120,7 @@ def eval_model(config, model, loader, device):
 
             functional.reset_net(model)
 
-        # if self.config.DCLSversion == 'gauss' and self.config.model_type != 'snn':
-        #     for i in range(len(self.blocks)):
-        #         self.blocks[i][0][0].version = 'gauss'
-        #         self.blocks[i][0][0].DCK.version = 'gauss'
 
-        # model.load_state_dict(torch.load(eventid + '.pt'), strict=True)
-        # if os.path.exists(eventid + '.pt'):
-        #     os.remove(eventid + '.pt')
-        # else:
-        #     print(f"File '{eventid + '.pt'}' does not exist.")
     loss_valid = np.mean(loss_batch)
     metric_valid = np.mean(metric_batch)
     return loss_valid, metric_valid
@@ -160,22 +151,7 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
             # x={Tensor:(256, 101,,140)}
             attention_mask = padded_sequence_mask(x_len)
             attention_mask = attention_mask.transpose(0,1).to(device)
-            # if self.config.augment:
-            #     x, y = augmentations(x, y)
-            # current_max_t = x.shape[1]  # 获取当前批次中的最大时间步长
-            # if current_max_t > max_t:
-            #     max_t = current_max_t  # 更新最大时间步长
-            if config.use_padding:
-                current_time = x.size(1)
-                target_time = config.max_len
 
-                # 计算需要填充的时间步数
-                padding_needed = max(0, target_time - current_time)  # 如果当前时间步长超过目标，则不需要填充
-
-                padding = (0, 0, 0, padding_needed)
-
-                # 应用填充
-                x = F.pad(x, padding, 'constant', 0)
 
             y = F.one_hot(y, config.n_outputs).float()
             x = x.float().to(device)  # (batch, time, neurons) => (512,101,140)
@@ -185,9 +161,8 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
             optimizer.zero_grad()
 
             output= model(x,attention_mask)
-            # loss = calc_loss_std(output, y)
             loss = calc_loss(config, output, y)
-            # loss = calc_loss_nonspike(config, output, y)
+
 
             loss.backward()
             optimizer.step()
@@ -243,9 +218,6 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
         loss_valid = np.mean(loss_batch)
         metric_valid = np.mean(metric_batch)
 
-
-        # loss_valid, metric_valid = eval_model(valid_loader, device)
-        #
         loss_epochs['valid'].append(loss_valid)
         metric_epochs['valid'].append(metric_valid)
         #
@@ -275,17 +247,17 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
 
         ave_model_path = os.path.join(checkpoint_dir, config.save_model_path)
 
-        if metric_valid > best_metric_val:  # and (self.config.model_type != 'snn_delays' or epoch >= self.config.final_epoch - 1):
+        if metric_valid > best_metric_val:
             print("# Saving best Metric model...")
             torch.save(model.state_dict(), ave_model_path.replace('REPL', 'Best_ACC'))
             best_metric_val = metric_valid
 
-        if loss_valid < best_loss_val:  # and (self.config.model_type != 'snn_delays' or epoch >= self.config.final_epoch - 1):
+        if loss_valid < best_loss_val:
             print("# Saving best Loss model...")
             torch.save(model.state_dict(),ave_model_path.replace('REPL', 'Best_Loss'))
             best_loss_val = loss_valid
 
-        if metric_test > best_metric_test:  # and (self.config.model_type != 'snn_delays' or epoch >= self.config.final_epoch - 1):
+        if metric_test > best_metric_test:
             best_metric_test = metric_test
 
     ###### make_plot ######
@@ -305,7 +277,7 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
         # 添加标题和标签
         plt.title('Training, Validation, and Test Accuracy')
         plt.xlabel('Epochs')
-        plt.ylabel('Accuracy (%)')  # 更改y轴标签
+        plt.ylabel('Accuracy (%)')
         plt.legend()
 
         # 设置y轴的显示格式
@@ -315,7 +287,7 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
         # 显示图表
-        plt.savefig(f'Accuracy_{current_time}.png')  # 保存图表为PNG文件，文件名包含当前时间
+        plt.savefig(f'Accuracy_{current_time}.png')
         plt.show()
 
 
@@ -328,7 +300,6 @@ if __name__ == '__main__':
     # config = GSCTConfig()
     config = SSCTConfig()
 
-    # TODO: logger这里有问题，打印不了日志
     logger = init_logger(config,"training")
     logger.info("Logger is properly initialized and ready to use.")
     logger.info("The GPU is {}".format(config.gpu))
@@ -349,8 +320,6 @@ if __name__ == '__main__':
     print()
     print(f"\n=====> Device = {device} \n\n")
 
-
-    # 使用这个方式，在使用单独dim进行实验，结果不同
     for hidden_dim in config.n_hidden_neurons_list:
         # for time_step in config.time_step_list:
         for attention_window in config.attention_window_list:
@@ -361,12 +330,6 @@ if __name__ == '__main__':
             torch.cuda.manual_seed_all(seed_val)
             torch.backends.cudnn.deterministic = True
             torch.backends.cudnn.benchmark = False
-            # cp.random.seed(seed_val)
-
-            # # different time steps:
-            # config.time_step = time_step
-            # attention_window = int((200 // time_step))  # 100 time steps best is 20
-
             config.attention_window = attention_window
 
 
@@ -407,21 +370,16 @@ if __name__ == '__main__':
             logger.info("The spike_mode is: {}".format(config.spike_mode))
             logger.info("The block_mode is :{}".format(config.block_type))
             logger.info("The gate_v_threshold is: {}".format(config.gate_v_threshold))
-            model = SpikeDrivenTransformer(config).to(device)
+            model = SpikCommander(config).to(device)
 
             now = datetime.now()
-            formatted_time = now.strftime("%Y%m%d_%H%M%S")  # 例如: "20230917_153045"
+            formatted_time = now.strftime("%Y%m%d_%H%M%S")
             dataset_info = config.dataset
-            # 指定文件夹路径
             folder_path = os.path.join('model_structure', dataset_info)
-            # 创建文件夹（如果不存在）
             os.makedirs(folder_path, exist_ok=True)
-
-            # 构造文件名并包括路径
             filename = os.path.join(folder_path, f'model_structure_{dataset_info}_{formatted_time}.txt')
 
             with open(filename, 'w') as f:
-                # 将print函数的输出临时重定向到文件
                 print(model, file=f)
 
             print(f"===> Dataset    = {config.dataset}")
@@ -436,6 +394,5 @@ if __name__ == '__main__':
             T = config.t_max
             logger.info("T:{}".format(T))
             scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=T)
-            # scheduler = lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=T, T_mult=2)
 
             train_model(config, train_loader, valid_loader, test_loader, device, model, optimizer, scheduler, epochs)

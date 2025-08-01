@@ -60,7 +60,7 @@ class Config:
 
     backend = 'cupy'
     attn_mode = 'v2'
-    kernel_size = 31  # 卷积核为255时，92.42% 255=>127=>63=>31,
+    kernel_size = 31
     bias = True
 
     t_max = 40
@@ -70,7 +70,7 @@ class Config:
     n_hidden_neurons_list = [256] # [128, 144, 160, 176, 192, 208, 224, 240, 256]
     n_outputs = 20 if dataset == 'shd' else 35
 
-    num_heads = 16  # 4=> 8=> 16 不增添加网络参数
+    num_heads = 16
     loss = 'sum'           # 'mean', 'max', 'spike_count', 'sum'
     loss_fn = 'CEloss' # 'SmoothCEloss', 'CEloss'
 

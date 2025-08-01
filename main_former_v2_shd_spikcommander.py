@@ -2,7 +2,7 @@ from datasets import SHD_dataloaders, SSC_dataloaders, GSC_dataloaders
 from best_config_GSC_former import Config as GSCTConfig
 from best_config_SSC_former import Config as SSCTConfig
 from best_config_SHD_former import Config as SHDTConfig
-from spikcommder import SpikeDrivenTransformerr
+from spikcommder import SpikCommander
 import torch
 import utils
 import numpy as np
@@ -166,12 +166,12 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
 
         ave_model_path = os.path.join(checkpoint_dir, config.save_model_path)
 
-        if metric_valid > best_metric_val:  # and (self.config.model_type != 'snn_delays' or epoch >= self.config.final_epoch - 1):
+        if metric_valid > best_metric_val:
             print("# Saving best Metric model...")
             torch.save(model.state_dict(), ave_model_path.replace('REPL', 'Best_ACC'))
             best_metric_val = metric_valid
 
-        if loss_valid < best_loss_val:  # and (self.config.model_type != 'snn_delays' or epoch >= self.config.final_epoch - 1):
+        if loss_valid < best_loss_val:
             print("# Saving best Loss model...")
             torch.save(model.state_dict(),ave_model_path.replace('REPL', 'Best_Loss'))
             best_loss_val = loss_valid
@@ -191,7 +191,7 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
 
         plt.title('Training, Validation, and Test Accuracy')
         plt.xlabel('Epochs')
-        plt.ylabel('Accuracy (%)')  # 更改y轴标签
+        plt.ylabel('Accuracy (%)')
         plt.legend()
 
 
@@ -200,7 +200,7 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
         # 显示图表
-        plt.savefig(f'Accuracy_{current_time}.png')  # 保存图表为PNG文件，文件名包含当前时间
+        plt.savefig(f'Accuracy_{current_time}.png')
         plt.show()
 
 
@@ -292,7 +292,7 @@ if __name__ == '__main__':
         logger.info("The spike_mode is: {}".format(config.spike_mode))
         logger.info("The block_mode is :{}".format(config.block_type))
         logger.info("The gate_v_threshold is: {}".format(config.gate_v_threshold))
-        model = SpikeDrivenTransformer(config).to(device)
+        model = SpikCommander(config).to(device)
 
 
         logger.info("Model size:{}".format(utils.count_parameters(model)))
@@ -304,18 +304,14 @@ if __name__ == '__main__':
         logger.info("T:{}".format(T))
 
         now = datetime.now()
-        formatted_time = now.strftime("%Y%m%d_%H%M%S")  # 例如: "20230917_153045"
+        formatted_time = now.strftime("%Y%m%d_%H%M%S")
         dataset_info = config.dataset
-        # 指定文件夹路径
-        folder_path = os.path.join('model_structure', dataset_info)
-        # 创建文件夹（如果不存在）
-        os.makedirs(folder_path, exist_ok=True)
 
-        # 构造文件名并包括路径
+        folder_path = os.path.join('model_structure', dataset_info)
+        os.makedirs(folder_path, exist_ok=True)
         filename = os.path.join(folder_path, f'model_structure_{dataset_info}_{formatted_time}.txt')
 
         with open(filename, 'w') as f:
-            # 将print函数的输出临时重定向到文件
             print(model, file=f)
 
         print(f"===> Dataset    = {config.dataset}")

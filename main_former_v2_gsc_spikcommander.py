@@ -3,12 +3,8 @@ from datasets import SHD_dataloaders, SSC_dataloaders, GSC_dataloaders
 from best_config_GSC_former import Config as GSCTConfig
 from best_config_SSC_former import Config as SSCTConfig
 from best_config_SHD_former import Config as SHDTConfig
-# from best_config_libri import Config as libriConfig
-# from spkingformer_v4_9364 import SpikeDrivenTransformer
-from spikcommder import SpikeDrivenTransformer
+from spikcommder import SpikCommander
 from spikingjelly.datasets import padded_sequence_mask
-# from spkingformer_v4_9364_plif_two_pe import SpikeDrivenTransformer
-# from spkingformer_v4_9364_tebn import SpikeDrivenTransformer
 from snn_delays import SnnDelays
 import torch
 from snn import SNN
@@ -50,10 +46,6 @@ def calc_loss(config, output, y):
 
         CEloss = nn.CrossEntropyLoss()
         loss = CEloss(m, y)
-        # log_softmax_fn = nn.LogSoftmax(dim=1)
-        # loss_fn = nn.NLLLoss()
-        # log_p_y = log_softmax_fn(m)
-        # loss = loss_fn(log_p_y, y)
 
         return loss
 
@@ -64,10 +56,7 @@ def calc_loss_nonspike(config, output, y):
 
         CEloss = nn.CrossEntropyLoss()
         loss = CEloss(output, y)
-        # log_softmax_fn = nn.LogSoftmax(dim=1)
-        # loss_fn = nn.NLLLoss()
-        # log_p_y = log_softmax_fn(m)
-        # loss = loss_fn(log_p_y, y)
+
 
         return loss
 
@@ -104,8 +93,7 @@ def eval_model(config, model, loader, device):
             output = model(x,attention_mask)
 
             loss = calc_loss(config, output, y)
-            # loss = calc_loss_nonspike(config, output, y)
-            # loss = calc_loss_std(output,y)
+
             metric = calc_metric(config, output, y)
 
             loss_batch.append(loss.detach().cpu().item())
@@ -129,7 +117,6 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
     best_metric_val = 0  # 1e6
     best_metric_test = 0  # 1e6
     best_loss_val = 1e6
-    # calc_loss_std = SoftTargetCrossEntropy()
 
     for epoch in range(num_epochs):
 
@@ -156,9 +143,8 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
             optimizer.zero_grad()
 
             output= model(x,attention_mask)
-            # loss = calc_loss_std(output, y)
             loss = calc_loss(config, output, y)
-            # loss = calc_loss_nonspike(config, output, y)
+
 
             loss.backward()
             optimizer.step()
@@ -204,9 +190,6 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
         loss_valid = np.mean(loss_batch)
         metric_valid = np.mean(metric_batch)
 
-
-        # loss_valid, metric_valid = eval_model(valid_loader, device)
-        #
         loss_epochs['valid'].append(loss_valid)
         metric_epochs['valid'].append(metric_valid)
         #
@@ -236,17 +219,17 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
 
         ave_model_path = os.path.join(checkpoint_dir, config.save_model_path)
 
-        if metric_valid > best_metric_val:  # and (self.config.model_type != 'snn_delays' or epoch >= self.config.final_epoch - 1):
+        if metric_valid > best_metric_val:
             print("# Saving best Metric model...")
             torch.save(model.state_dict(), ave_model_path.replace('REPL', 'Best_ACC'))
             best_metric_val = metric_valid
 
-        if loss_valid < best_loss_val:  # and (self.config.model_type != 'snn_delays' or epoch >= self.config.final_epoch - 1):
+        if loss_valid < best_loss_val:
             print("# Saving best Loss model...")
             torch.save(model.state_dict(),ave_model_path.replace('REPL', 'Best_Loss'))
             best_loss_val = loss_valid
 
-        if metric_test > best_metric_test:  # and (self.config.model_type != 'snn_delays' or epoch >= self.config.final_epoch - 1):
+        if metric_test > best_metric_test:
             best_metric_test = metric_test
 
     ###### make_plot ######
@@ -257,26 +240,22 @@ def train_model(config, train_loader, valid_loader, test_loader, device, model, 
     # 获取epoch数
     epochs = range(1, len(train_acc) + 1)
     if config.make_plot:
-        # 创建绘图
         plt.figure(figsize=(10, 5))
         plt.plot(epochs, train_acc, '-o', label='Training Accuracy', color='g')
         plt.plot(epochs, valid_acc, '-^', label='Validation Accuracy', color='b')
         plt.plot(epochs, test_acc, '-s', label='Test Accuracy', color='y')
 
-        # 添加标题和标签
         plt.title('Training, Validation, and Test Accuracy')
         plt.xlabel('Epochs')
-        plt.ylabel('Accuracy (%)')  # 更改y轴标签
+        plt.ylabel('Accuracy (%)')
         plt.legend()
 
-        # 设置y轴的显示格式
         plt.gca().yaxis.set_major_formatter(plt.FormatStrFormatter('%.2f%%'))
 
-        # 获取当前时间，格式化为字符串
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
         # 显示图表
-        plt.savefig(f'Accuracy_{current_time}.png')  # 保存图表为PNG文件，文件名包含当前时间
+        plt.savefig(f'Accuracy_{current_time}.png')
         plt.show()
 
 
@@ -289,7 +268,6 @@ if __name__ == '__main__':
     config = GSCTConfig()
     # config = SSCTConfig()
 
-    # TODO: logger这里有问题，打印不了日志
     logger = init_logger(config, "training")
     logger.info("Logger is properly initialized and ready to use.")
     logger.info("The GPU is {}".format(config.gpu))
@@ -311,16 +289,8 @@ if __name__ == '__main__':
     print(f"\n=====> Device = {device} \n\n")
 
     augs = SpecAugment(config)
-    # augs = SpecAugmenter(config)
 
-    # 使用这个方式，在使用单独dim进行实验，结果不同
     for hidden_dim in config.n_hidden_neurons_list:
-        # for hop_length in config.hop_length_list:
-        # #
-        #     config.hop_length = hop_length #  hop_length=80 => time steps=100 => attn_window=20
-        #                                    #  hop_length=160 => time steps=50 => attn_window=10
-        #     attention_window = int((1600 // config.hop_length))  # 100 time steps best is 20
-        #     config.attention_window = attention_window
         for attention_window in config.attention_window_list:
             ''' set random seeds '''
             seed_val = config.seed
@@ -330,7 +300,6 @@ if __name__ == '__main__':
             torch.backends.cudnn.deterministic = True
             torch.backends.cudnn.benchmark = False
 
-            # # different attention windows:
             config.attention_window = attention_window
 
             # cp.random.seed(seed_val)
@@ -373,21 +342,16 @@ if __name__ == '__main__':
             logger.info("The spike_mode is: {}".format(config.spike_mode))
             logger.info("The block_mode is :{}".format(config.block_type))
             logger.info("The gate_v_threshold is: {}".format(config.gate_v_threshold))
-            model = SpikeDrivenTransformer(config).to(device)
+            model = SpikCommander(config).to(device)
 
             now = datetime.now()
-            formatted_time = now.strftime("%Y%m%d_%H%M%S")  # 例如: "20230917_153045"
+            formatted_time = now.strftime("%Y%m%d_%H%M%S")
             dataset_info = config.dataset
-            # 指定文件夹路径
             folder_path = os.path.join('model_structure', dataset_info)
-            # 创建文件夹（如果不存在）
             os.makedirs(folder_path, exist_ok=True)
-
-            # 构造文件名并包括路径
             filename = os.path.join(folder_path, f'model_structure_{dataset_info}_{formatted_time}.txt')
 
             with open(filename, 'w') as f:
-                # 将print函数的输出临时重定向到文件
                 print(model, file=f)
 
             print(f"===> Dataset    = {config.dataset}")
@@ -401,9 +365,6 @@ if __name__ == '__main__':
             optimizer = build_optimizer(config, model)
             T = config.t_max
             logger.info("T:{}".format(T))
-            # warmup_epochs = config.warmup_epochs
             cosine_scheduler = lr_scheduler.CosineAnnealingLR(optimizer, T_max=T)
-            # warmup_scheduler = LambdaLR(optimizer, lr_lambda=lambda epoch: warmup_lr_scheduler(config, epoch))
-            # scheduler = SequentialLR(optimizer, schedulers=[warmup_scheduler, cosine_scheduler], milestones=[warmup_epochs])
 
             train_model(config, train_loader, valid_loader, test_loader, device, model, optimizer, cosine_scheduler, epochs)

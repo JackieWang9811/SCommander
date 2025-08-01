@@ -112,7 +112,7 @@ class SpikingEmbedv2p(nn.Module):
 
 
 
-class SpikeDrivenTransformer(nn.Module):
+class SpikCommander(nn.Module):
     def __init__(self, config):
         super().__init__()
 

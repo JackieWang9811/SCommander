@@ -68,7 +68,7 @@ class Config:
 
     backend = 'cupy'
     attn_mode = 'v2'
-    kernel_size = 31  # 卷积核为255时，92.42% 255=>127=>63=>31,,
+    kernel_size = 31
     depths = 1
     bias = True
 

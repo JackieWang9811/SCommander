@@ -34,7 +34,7 @@ The first thing to do after installing all the dependencies is to specify the `d
 For example:
 
 ```
-cd Spiking-Transformer-Speech
+cd SpikCommander
 mkdir -p Datasets/SHD
 mkdir -p Datasets/SSC
 mkdir -p Datasets/GSC
