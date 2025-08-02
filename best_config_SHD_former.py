@@ -88,8 +88,6 @@ class Config:
     init_tau = 2.0 if spike_mode == "plif" else 2.0  # LIF
     v_threshold = 1.0 # LIF
     v_reset = 0.5
-    output_v_threshold = 2.0 if loss == 'spike_count' else 1e9  # use 1e9 for loss = 'mean' or 'max'
-    gate_v_threshold = 1.0  # LIF
     alpha = 5.0
     surrogate_function = surrogate.ATan(alpha = alpha)
     detach_reset = True

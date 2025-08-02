@@ -17,7 +17,7 @@ matplotlib.use('Agg')
 
 class MSTASA_v_branch(nn.Module):
     """
-    MSTASA captures diverse temporal dependencies from multiple perspectives.
+    MSTASA captures diverse temporal dependencies from multiple perspectives with shared spiking QKV representations.
     NOTE: This is a partial implementation intended for peer review.
     Full code will be released upon paper acceptance.
     """
@@ -44,9 +44,9 @@ class MSTASA_v_branch(nn.Module):
         return x
 
 
-class FRFN(nn.Module):
+class SCRMLP(nn.Module):
     """
-    Feedforward Refinement Network (FRFN) module used for selective channel and temporal refinement.
+    Spiking Contextual Refinement MLP (SCRMLP) module used for selective channel and temporal refinement.
     NOTE: This is a partial implementation intended for peer review.
     Complete implementation will be released upon paper acceptance.
     """
@@ -97,7 +97,7 @@ class Backbone(nn.Module):
 
         # MLP
         mlp_hidden_dim = config.hidden_dims
-        self.mlp = FRFN(
+        self.scrmlp = SCRMLP(
             config,
             in_features=dim,
             hidden_features=mlp_hidden_dim,
@@ -113,7 +113,7 @@ class Backbone(nn.Module):
         x = x + attn_output
 
         # Second MLP with residual
-        mlp2_output = self.mlp(x)
+        mlp2_output = self.scrmlp(x)
         x = x + mlp2_output
 
         return x

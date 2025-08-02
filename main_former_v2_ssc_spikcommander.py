@@ -2,7 +2,6 @@ from datasets import SHD_dataloaders, SSC_dataloaders, GSC_dataloaders
 from best_config_GSC_former import Config as GSCTConfig
 from best_config_SSC_former import Config as SSCTConfig
 from best_config_SHD_former import Config as SHDTConfig
-
 from spikcommder import SpikCommander
 from spikingjelly.datasets import padded_sequence_mask
 

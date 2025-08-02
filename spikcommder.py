@@ -9,21 +9,18 @@ from module.conv import Transpose,PointwiseConv1d,DepthwiseConv1d
 from spikingjelly.datasets import padded_sequence_mask
 from module.spikcommander_backbone import Backbone
 
-
-
-
-class SpikingEmbedv2p(nn.Module):
+class SEE(nn.Module):
     def __init__(self, config, kernel_size=7):
         super(SpikingEmbedv2p, self).__init__()
         self.config = config
 
-        self.pwconv = PointwiseConv1d(config.n_inputs, config.n_hidden_neurons, stride=1, padding=0, bias=True) # True
+        self.pwconv = PointwiseConv1d(config.n_inputs, config.n_hidden_neurons, stride=1, padding=0, bias=True)
         self.dwconv = DepthwiseConv1d(config.n_hidden_neurons, config.n_hidden_neurons, kernel_size, stride=1,
                                       padding=(kernel_size - 1) // 2,
-                                      bias=config.use_dw_bias) # config.use_dw_bias
+                                      bias=config.use_dw_bias)
 
-        self.linear = layer.Linear(self.config.n_hidden_neurons, self.config.n_hidden_neurons, bias=False, # False，True
-                                   step_mode='m')  # self.config.bias
+        self.linear = layer.Linear(self.config.n_hidden_neurons, self.config.n_hidden_neurons, bias=False,
+                                   step_mode='m')
 
         if self.config.use_bn:
             self.bn1 = layer.BatchNorm1d(config.n_hidden_neurons, step_mode='m')
@@ -37,51 +34,28 @@ class SpikingEmbedv2p(nn.Module):
         self.trans2 = Transpose(2, 0, 1)
         self.trans3 = Transpose(1, 2, 0)
 
-        if self.config.spike_mode == 'lif':
-            self.lif1 = LIFNode(
-                tau=config.init_tau,
-                v_threshold=config.v_threshold, v_reset=config.v_reset,
-                surrogate_function=config.surrogate_function,
-                detach_reset=config.detach_reset,
-                step_mode='m',
-                decay_input=False,
-                store_v_seq=False,
-                backend=config.backend
-            )
+        self.lif1 = LIFNode(
+            tau=config.init_tau,
+            v_threshold=config.v_threshold, v_reset=config.v_reset,
+            surrogate_function=config.surrogate_function,
+            detach_reset=config.detach_reset,
+            step_mode='m',
+            decay_input=False,
+            store_v_seq=False,
+            backend=config.backend
+        )
 
-            self.lif2 = LIFNode(
-                tau=config.init_tau,
-                v_threshold=config.v_threshold, v_reset=config.v_reset,
-                surrogate_function=config.surrogate_function,
-                detach_reset=config.detach_reset,
-                step_mode='m',
-                decay_input=False,
-                store_v_seq=False,
-                backend=config.backend
-            )
+        self.lif2 = LIFNode(
+            tau=config.init_tau,
+            v_threshold=config.v_threshold, v_reset=config.v_reset,
+            surrogate_function=config.surrogate_function,
+            detach_reset=config.detach_reset,
+            step_mode='m',
+            decay_input=False,
+            store_v_seq=False,
+            backend=config.backend
+        )
 
-        elif self.config.spike_mode == 'plif':
-            self.lif1 = ParametricLIFNode(
-                init_tau=config.init_tau,
-                v_threshold=config.v_threshold, v_reset=config.v_reset,
-                surrogate_function=config.surrogate_function,
-                detach_reset=config.detach_reset,
-                step_mode='m',
-                decay_input=False,
-                store_v_seq=False,
-                backend=config.backend
-            )
-
-            self.lif2 = ParametricLIFNode(
-                init_tau=config.init_tau,
-                v_threshold=config.v_threshold, v_reset=config.v_reset,
-                surrogate_function=config.surrogate_function,
-                detach_reset=config.detach_reset,
-                step_mode='m',
-                decay_input=False,
-                store_v_seq=False,
-                backend=config.backend
-            )
 
     def forward(self, x):
         # batch, time, dim =>  batch, dim, time
@@ -113,12 +87,12 @@ class SpikCommander(nn.Module):
         self.config = config
 
 
-        self.spike_embed = SpikingEmbedv2p(config, kernel_size=7)
+        self.see = SEE(config, kernel_size=7)
 
 
         self.blocks = nn.ModuleList(
             [
-                MS_Block_Conv(
+                Backbone(
                     config=self.config,
                     dim=self.config.n_hidden_neurons,
                     num_heads=self.config.num_heads,
@@ -148,7 +122,7 @@ class SpikCommander(nn.Module):
 
     def forward(self, x, attention_mask):
 
-        x = self.spike_embed(x)
+        x = self.see(x)
 
         for module in self.blocks:
             x = module(x, attention_mask)

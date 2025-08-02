@@ -48,7 +48,6 @@ class Config:
     ############################
     #        USE Module        #
     ############################
-    use_norm = False
     use_bn = True
     use_aug = True
     use_dp = True
@@ -69,15 +68,13 @@ class Config:
     kernel_size = 31
     bias = True
 
-    # weight_decay = 1e-5
     n_warmup = 0
-    # lr_start = 1e-5
     t_max = 40
-    lr_w = 2e-3 # 2e-3
-    weight_decay = 5e-3 # Default 0.1 => 0.01 => 2e-3 => 5e-3
+    lr_w = 2e-3
+    weight_decay = 5e-3
 
     n_inputs = n_mels
-    n_hidden_neurons_list = [256] # [128, 144, 160, 176, 192, 208, 224, 240, 256]
+    n_hidden_neurons_list = [256]
     n_outputs = 20 if dataset == 'shd' else 35
     num_heads = 16
 
