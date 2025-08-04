@@ -457,21 +457,3 @@ class GSpeechCommands(Dataset):
         return waveform, target, number
 
 
-def download_data():
-    url = 'https://github.com/karoldvl/ESC-50/archive/master.zip'
-    r = requests.get(url, allow_redirects=True)
-
-    if not os.path.exists("data/ESC50"):
-        os.mkdir("data/ESC50")
-
-    open('data/ESC50/data.zip', 'wb').write(r.content)
-    with zipfile.ZipFile('data/ESC50/data.zip', 'r') as zip_ref:
-        zip_ref.extractall("data/ESC50/")
-
-
-def esc_collate_fn(batch):
-
-    batch = pd.DataFrame(batch).to_dict(orient="list")
-    batch["input"] = torch.from_numpy(np.stack(batch["input"], axis=0))
-    batch["target"] = torch.LongTensor(batch["target"])
-    return batch

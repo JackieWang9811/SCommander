@@ -28,7 +28,7 @@ class MSTASA_v_branch(nn.Module):
         num_heads: int = 8,
         init_tau: float = 2.0,
         spike_mode: str = "lif",
-        attention_window: int = 4,
+        attention_window: int = 20,
         layers: int = 0,
     ):
         super().__init__()
