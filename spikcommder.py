@@ -11,7 +11,7 @@ from module.spikcommander_backbone import Backbone
 
 class SEE(nn.Module):
     def __init__(self, config, kernel_size=7):
-        super(SpikingEmbedv2p, self).__init__()
+        super(SEE, self).__init__()
         self.config = config
 
         self.pwconv = PointwiseConv1d(config.n_inputs, config.n_hidden_neurons, stride=1, padding=0, bias=True)
