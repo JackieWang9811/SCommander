@@ -1,6 +1,6 @@
 # SpikCommander
 
-Official implementation of "SpikCommander: A High-performance Spiking Transformer with Multi-view Learning for Efficient Speech Command Recognition" (AAAI2026). See preprint (link_to_arxiv_or_pdf) for appendix.
+Official implementation of "SpikCommander: A High-performance Spiking Transformer with Multi-view Learning for Efficient Speech Command Recognition" (AAAI2026). See [preprint](https://arxiv.org/abs/2511.07883v1) for Appendix.
 
 
 ## Dependencies
