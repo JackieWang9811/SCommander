@@ -316,7 +316,7 @@ if __name__ == '__main__':
         logger.info("The hidden_dim is: {}".format(hidden_dim))
         logger.info("The spike_mode is: {}".format(config.spike_mode))
         logger.info("The block_mode is :{}".format(config.block_type))
-        logger.info("The gate_v_threshold is: {}".format(config.gate_v_threshold))
+        
         model = SpikCommander(config).to(device)
 
         now = datetime.now()
